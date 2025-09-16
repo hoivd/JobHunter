@@ -18,20 +18,8 @@ Agent này có thể:
 ```bash
 
 # Tạo môi trường ảo (khuyến nghị)
-conda create -n github-agent python=3.11
+conda env create -f environment.yml
 conda activate github-agent
-
-# Cài thư viện
-pip install -r requirements.txt
-```
-
-**`requirements.txt`** (ví dụ):
-```
-langchain
-langchain-google-genai
-PyGithub
-python-dotenv
-```
 
 ---
 
