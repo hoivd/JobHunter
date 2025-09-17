@@ -1,1 +1,1 @@
-JobHunter
+Cần tạo 1 file .env chứa: OPENAI_API_KEY=fdsjhfjhsd
