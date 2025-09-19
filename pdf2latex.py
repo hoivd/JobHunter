@@ -1,69 +1,46 @@
-from openai import OpenAI
 import base64
 from pathlib import Path
 from dotenv import load_dotenv
 import os
-
+import google.generativeai as genai
+from utils import extract_latex, extract_links_from_pdf
+from prompt import pdf_to_json_prompt
+# Load API key
 load_dotenv()
-client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+GEMINI_API_KEY = os.getenv("GOOGLE_API_KEY")
+if not GEMINI_API_KEY:
+    raise ValueError("GEMINI_API_KEY chưa được thiết lập trong .env")
+
+genai.configure(api_key=GEMINI_API_KEY)
 
 
-def pdf_to_latex(pdf_path: str, model: str = "o4-mini") -> str:
+def pdf_to_latex_with_links(pdf_path: str, model: str = "gemini-2.5-flash") -> str:
     """
-    Chuyển 1 file PDF thành mã LaTeX bằng OpenAI Responses API.
-    
-    Parameters
-    ----------
-    pdf_path : str
-        Đường dẫn tới file PDF cần chuyển đổi
-    model : str
-        Tên model OpenAI (mặc định: "o4-mini")
-        
-    Returns
-    -------
-    str
-        Nội dung LaTeX trả về từ API
+    Chuyển PDF thành LaTeX, đảm bảo giữ đúng hyperlink gốc trong file.
     """
-
-    # Đọc pdf và encode base64
     pdf_file = Path(pdf_path)
     if not pdf_file.exists():
         raise FileNotFoundError(f"Không tìm thấy file: {pdf_path}")
+
     pdf_base64 = base64.b64encode(pdf_file.read_bytes()).decode("utf-8")
 
-    response = client.responses.create(
-        model=model,
-        input=[
-            {
-                "role": "developer",
-                "content": [
-                    {
-                        "type": "input_text",
-                        "text": (
-                            "Người dùng sẽ đưa vào 1 file pdf, nhiệm vụ của bạn là "
-                            "chuyển nó về latex.\nKhông trả lời hay giải thích gì thêm."
-                        )
-                    }
-                ]
-            },
-            {
-                "role": "user",
-                "content": [
-                    {
-                        "type": "input_file",
-                        "filename": pdf_file.name,
-                        "file_data": f"data:application/pdf;base64,{pdf_base64}"
-                    }
-                ]
-            }
-        ]
-    )
+    links = extract_links_from_pdf(pdf_path)
+    
+    prompt_text = pdf_to_json_prompt.format(links=links)
 
-    return response.output_text
+    model = genai.GenerativeModel(model)
 
-# test
-output = pdf_to_latex("LeVanHoang_AI_Enginner.pdf")
+    response = model.generate_content([
+        prompt_text,
+        {
+            "mime_type": "application/pdf",
+            "data": pdf_base64,
+        }
+    ])
 
-# lưu output vào file latex.tex
-with open("output.tex", "w") as f:
-    f.write(output)
+    output = response.text
+    output_latex = extract_latex(output)
+    with open("output.tex", "w", encoding="utf-8") as f:
+        f.write(output_latex)
+    return output_latex
+    
