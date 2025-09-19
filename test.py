@@ -1,6 +1,6 @@
 from utils import extract_json, generate_cypher_from_json
-from gemini import run_gemini
-from prompt import extract_jd_json_prompt
+from gemini_manager import run_gemini
+from prompts.prompt import extract_jd_json_prompt
 import json
 from queries import push_cypher_code
 from db import close_driver
@@ -10,8 +10,12 @@ def main(jd: str):
     json_jd = run_gemini(prompt, temperature=0.3)
     json_jd = extract_json(json_jd)
     json_jd = json.loads(json_jd)
-    cypher_jd = generate_cypher_from_json(json_jd, out_path="output.cypher")
-    push_cypher_code(cypher_jd)
+    with open("data/data.json", "w", encoding="utf-8") as f:
+        json.dump(json_jd, f, indent=4, ensure_ascii=False)
+
+    print("Đã lưu vào file data.json")
+    # cypher_jd = generate_cypher_from_json(json_jd, out_path="output.cypher")
+    # push_cypher_code(cypher_jd)
     
     close_driver()
 
