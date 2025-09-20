@@ -64,8 +64,8 @@
     "JD-Degrees": "JDRequiresDegrees",
     "Degrees-JD": "DegreesBelongToJD",
 
-    "JD-Locations": "JDSpecifiesLocations",
-    "Locations-JD": "LocationsBelongToJD",
+    "Company-Locations": "CompanySpecifiesLocations",
+    "Locations-Company": "LocationsBelongToCompany",
 
     "JD-Tasks": "JDDescribesTasks",
     "Tasks-JD": "TasksBelongToJD",

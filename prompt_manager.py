@@ -6,7 +6,6 @@ from logger import _setup_logger
 config = Utils.get_config()
 logger = _setup_logger(__name__, level=config["logging"]["level"])
 
-
 class PromptManager:
     def __init__(self, base_dir="prompts"):
         self.base_dir = base_dir

@@ -9,9 +9,36 @@ class Json2Cypher:
         self.cypher_rels = ""
         self.cypher_script = ""
 
+    def _preprocess_entities(self):
+        """
+        Tiền xử lý entity để quyết định mode (create/merge).
+        - Company, JobTitle => merge
+        - Các entity khác   => create
+        """
+        for entity_name, entity_data in self.entities.items():
+            # nếu chưa có mode thì set mặc định theo rule
+            if "mode" not in entity_data:
+                if entity_name in ["Company", "JobTitle"]:
+                    entity_data["mode"] = "merge"
+                else:
+                    entity_data["mode"] = "create"
+
+            # nếu thiếu isGroup thì mặc định là False
+            if "isGroup" not in entity_data:
+                entity_data["isGroup"] = False
+
     def _wrap_call(self, body: str) -> str:
         """Bọc 1 đoạn Cypher thành CALL { ... }"""
         return f"CALL {{\n{body.strip()}\n}}"
+    
+    def _create_node(self, label: str, props: dict, alias: str = None, return_out: bool = True) -> str:
+        """Tạo node mới (CREATE), không merge"""
+        alias = alias or label.lower()
+        props_str = ", ".join([f'{k}: "{v}"' for k, v in props.items() if v is not None])
+        body = f"CREATE ({alias}:{label} {{{props_str}}})"
+        if return_out:
+            body += f"\nRETURN {alias}"
+        return body
 
     def _merge_node(self, label: str, props: dict, alias: str = None, return_out: bool = True) -> str:
         alias = alias or label.lower()
@@ -41,23 +68,34 @@ class Json2Cypher:
         if return_out:
             body += f"\nRETURN collect({alias}) AS {alias}s_list"
         return body
+
+    def generate_node(self, entity_name: str, entity_data: dict, alias: str = None):
+        """Sinh Cypher cho 1 node"""
+        print(f"Entity data  {entity_data}")
+        if entity_data["mode"] == "create":
+            return self._create_node(entity_name, entity_data, alias)
+        elif entity_data["mode"] == "merge":
+            return self._merge_node(entity_name, entity_data, alias)
+        else:
+            raise ValueError(f"Unsupported mode: {entity_data['mode']}")
     
     def generate_group_nodes(self, entity_name: str, entity_data: dict, blocks: list):
         """Sinh Cypher cho các node group"""
         # Node group
-        group_node = self._merge_node(entity_name, {"name": entity_name}, alias=entity_name.lower())
+        group_node = self.generate_node(entity_name, {"name": entity_name, 'mode': entity_data['mode']}, alias=entity_name.lower())
         blocks.append(self._wrap_call(group_node))
 
-        # Child nodes
-        items = entity_data["items"]
-        child_label = entity_name[:-1] if entity_name.endswith("s") else entity_name + "Item"
-        block = self._merge_list_node(child_label, items)
-        blocks.append(self._wrap_call(block))
+        if len(entity_data['items']) > 0:
+            # Child nodes
+            items = entity_data["items"]
+            child_label = entity_name[:-1] if entity_name.endswith("s") else entity_name + "Item"
+            block = self._merge_list_node(child_label, items)
+            blocks.append(self._wrap_call(block))
 
     def generate_single_node(self, entity_name: str, entity_data: dict, blocks: list):
         """Sinh Cypher cho các node đơn lẻ"""
         props = {k: v for k, v in entity_data.items() if k != "isGroup"}
-        node_block = self._merge_node(entity_name, props, alias=entity_name.lower())
+        node_block = self.generate_node(entity_name, props, alias=entity_name.lower())
         blocks.append(self._wrap_call(node_block))
 
     def generate_nodes(self):
@@ -88,6 +126,8 @@ class Json2Cypher:
     def generate_group_relationships(self, rel_blocks: list):
         for entity_name, entity_data in self.entities.items():
             if entity_data.get("isGroup", False):
+                if len(entity_data["items"]) == 0:
+                    continue
                 group_alias = entity_name.lower()
                 item_label = entity_name[:-1] if entity_name.endswith("s") else entity_name + "Item"
                 item_alias = item_label.lower()
@@ -119,6 +159,7 @@ class Json2Cypher:
         self.cypher_rels = "\nWITH *\n".join(rel_blocks)
 
     def to_cypher(self) -> str:
+        self._preprocess_entities()
         self.generate_nodes()
         self.generate_relationships()
         self.cypher_script = f"{self.cypher_nodes}\nWITH *\n{self.cypher_rels}\nRETURN *"
