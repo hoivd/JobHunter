@@ -24,7 +24,12 @@ const LandingPage = () => {
           >
             <h1>Sign in</h1>
           </button>
-          <button className="cursor-pointer px-8 py-3  rounded-xl text-[#19335A] font-semibold bg-[#A5B8E8] hover:brightness-105 hover:scale-105 transition-all duration-200">
+          <button
+            onClick={() => {
+              navigate("/signup");
+            }}
+            className="cursor-pointer px-8 py-3  rounded-xl text-[#19335A] font-semibold bg-[#A5B8E8] hover:brightness-105 hover:scale-105 transition-all duration-200"
+          >
             <h1>Sign up</h1>
           </button>
         </div>

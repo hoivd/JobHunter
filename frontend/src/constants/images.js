@@ -13,6 +13,7 @@ import pdf from "../assets/images/pdf.png";
 import check from "../assets/images/check.png";
 import logout from "../assets/images/exit.png";
 import jh from "../assets/images/jh.png";
+import bg from "../assets/images/bg.jpg";
 
 export const companyLogos = {
   adobe,
@@ -30,4 +31,5 @@ export const companyLogos = {
   check,
   logout,
   jh,
+  bg,
 };
