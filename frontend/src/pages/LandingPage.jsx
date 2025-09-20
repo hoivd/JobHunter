@@ -1,9 +1,10 @@
-import React from "react";
 import { companyLogos } from "../constants/images";
 import { search } from "../constants/icons";
 import CompanyList from "../components/LandingPage/CompanyList";
+import { useNavigate } from "react-router-dom";
 
 const LandingPage = () => {
+  const navigate = useNavigate();
   return (
     <div
       style={{
@@ -15,7 +16,12 @@ const LandingPage = () => {
       <div className="px-20 py-8 w-full h-[15%] flex justify-between items-center">
         <img src={companyLogos.jh} alt="Job hunter" className="w-45" />
         <div className="flex quick justify-center items-center space-x-6">
-          <button className="cursor-pointer px-8 py-2 rounded-xl text-white font-semibold ">
+          <button
+            onClick={() => {
+              navigate("/signin");
+            }}
+            className="cursor-pointer px-8 py-2 rounded-xl text-white font-semibold "
+          >
             <h1>Sign in</h1>
           </button>
           <button className="cursor-pointer px-8 py-3  rounded-xl text-[#19335A] font-semibold bg-[#A5B8E8] hover:brightness-105 hover:scale-105 transition-all duration-200">
@@ -24,7 +30,7 @@ const LandingPage = () => {
         </div>
       </div>
       <div className="w-full h-[85%] grid grid-cols-[15%_50%_15%] gap-20 justify-center p-12">
-        <div className="flex flex-col space-y-6 w-full">
+        <div className="flex flex-col space-y-10 w-full">
           <div className="flex justify-end">
             <CompanyList logo={companyLogos.apple} />
           </div>
@@ -76,7 +82,7 @@ const LandingPage = () => {
             </button>
           </form>
         </div>
-        <div className="flex flex-col space-y-6 w-full">
+        <div className="flex flex-col space-y-10 w-full">
           <div className="flex justify-start">
             <CompanyList logo={companyLogos.tesla} />
           </div>
