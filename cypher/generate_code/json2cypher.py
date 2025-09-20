@@ -11,10 +11,22 @@ class Json2Cypher:
 
     def _preprocess_entities(self):
         """
-        Tiền xử lý entity để quyết định mode (create/merge).
+        Tiền xử lý entity để quyết định mode (create/merge) và chuẩn hóa chuỗi.
         - Company, JobTitle => merge
         - Các entity khác   => create
+        - Escape chuỗi để phù hợp Cypher (tránh lỗi với dấu nháy kép, backslash, newline...)
         """
+        def _escape_string(value: str) -> str:
+            """Escape chuỗi cho Cypher (chuyển \ -> \\, " -> \")."""
+            if not isinstance(value, str):
+                return value
+            # thay thế ký tự đặc biệt
+            value = value.replace("\\", "\\\\")   # escape backslash trước
+            value = value.replace('"', '\\"')     # escape dấu nháy kép
+            value = value.replace("\n", "\\n")    # escape newline
+            value = value.replace("\t", "\\t")    # escape tab
+            return value
+
         for entity_name, entity_data in self.entities.items():
             # nếu chưa có mode thì set mặc định theo rule
             if "mode" not in entity_data:
@@ -26,6 +38,24 @@ class Json2Cypher:
             # nếu thiếu isGroup thì mặc định là False
             if "isGroup" not in entity_data:
                 entity_data["isGroup"] = False
+
+            # xử lý escape chuỗi trong entity
+            for key, val in entity_data.items():
+                if isinstance(val, str):
+                    entity_data[key] = _escape_string(val)
+                elif isinstance(val, list):
+                    for idx, v in enumerate(val):
+                        if isinstance(v, str):
+                            val[idx] = _escape_string(v)
+                        elif isinstance(v, dict):
+                            for k2, v2 in v.items():
+                                if isinstance(v2, str):
+                                    v[k2] = _escape_string(v2)
+                elif isinstance(val, dict):
+                    for k2, v2 in val.items():
+                        if isinstance(v2, str):
+                            val[k2] = _escape_string(v2)
+
 
     def _wrap_call(self, body: str) -> str:
         """Bọc 1 đoạn Cypher thành CALL { ... }"""
@@ -85,6 +115,7 @@ class Json2Cypher:
         group_node = self.generate_node(entity_name, {"name": entity_name, 'mode': entity_data['mode']}, alias=entity_name.lower())
         blocks.append(self._wrap_call(group_node))
 
+        print(f'{entity_data}')
         if len(entity_data['items']) > 0:
             # Child nodes
             items = entity_data["items"]

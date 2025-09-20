@@ -95,6 +95,7 @@
 
 
     Yêu cầu:
+    Không thay được thay đổi trường isGroup trong JSON.
 
     Chỉ thay đổi giá trị trong các trường JSON dựa trên nội dung JD.
 

@@ -73,7 +73,7 @@ if __name__ == "__main__":
     from cypher.cleaner import Neo4jCleaner
     from cypher.cypher_manager import Neo4jDriver
 
-    delete_db = True
+    delete_db = False
     gm = GeminiLLM()
     pm = PromptManager()
     with Neo4jDriver() as neo_driver:

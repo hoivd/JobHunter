@@ -69,7 +69,7 @@ if __name__ == "__main__":
     from cypher.cleaner import Neo4jCleaner
     from cypher.cypher_manager import Neo4jDriver
 
-    delete_db = False
+    delete_db = True
     gm = GeminiLLM()
     pm = PromptManager()
     with Neo4jDriver() as neo_driver:
@@ -79,115 +79,167 @@ if __name__ == "__main__":
 
         app = JDExtractor(gm, pm, neo_driver, debug=True)
 
-        jd_text1 = f"""AI Architect (Python, Microservices, Docker)
-        ABBANK
-        Sign in to view salary
+        jd_text1 = f"""VIC - AI Engineer (Machine Learning/ Deep Learning)
+    Viettel Group
+    You'll love it
+    Tầng 5, Trụ sở chính của Tập đoàn Viettel, Lô D26, Khu đô thị mới Cầu Giấy, phường Yên Hòa, Cau Giay, Ha Noi
+    At office
+    1 day ago
+    Skills:
+    Job Expertise:
+    Job Domain:
+    Top 3 reasons to join us
+    Dẫn đầu thị trường
+    Cơ hội thử thách và phát triển bản thân
+    Môi trường làm việc năng động
+    Job description
+    Tham gia thiết kế, xây dựng và phát triển các nền tảng dùng chung phục vụ xử lý dữ liệu, huấn luyện, tối ưu, triển khai, vận hành và giám sát các mô hình Machine Learning (ML), Deep Learning (DL), Large Language Models (LLM) với khả năng chịu tải và dự phòng.
+    Phát triển và triển khai các ứng dụng chatbot dựa trên LLM, hỗ trợ truy vấn dữ liệu, tương tác với hệ thống nội bộ, tích hợp với các agent khác; nghiên cứu, thiết kế và xây dựng kiến trúc multi-agent đảm bảo hiệu quả và khả năng mở rộng.
+    Thiết kế, phát triển, kiểm thử và tối ưu các công cụ (tools) hỗ trợ LLM, đảm bảo tính chính xác, độ tin cậy, khả năng hoạt động ổn định trong môi trường thực tế.
+    Xây dựng, quản lý và vận hành các agent (low-code hoặc full-code), hỗ trợ tích hợp vào hệ sinh thái ứng dụng hiện có; giám sát và tối ưu hiệu suất hoạt động của agent.
+    Tham gia công tác quản trị hệ thống, bao gồm cài đặt, cấu hình, tối ưu hạ tầng triển khai ML/DL/AI; đảm bảo an toàn, bảo mật, khả năng mở rộng và duy trì tính sẵn sàng cao.
+    Tìm hiểu nghiệp vụ, khảo sát, so sánh, đánh giá và báo cáo các giải pháp, công nghệ ML/DL/AI phù hợp nhằm đáp ứng yêu cầu. Từ đó xây dựng tài liệu thiết kế tổng thể, thiết kế chi tiết, thiết kế cơ sở dữ liệu; triển khai hệ thống và quản lý source code cho các ứng dụng phần mềm liên quan.
+    Your skills and experience
+    Tốt nghiệp Đại học loại khá trở lên chuyên ngành CNTT hoặc các ngành liên quan.
+    TOIEC >=550 hoặc tương đương.
+    Có kinh nghiệm phát triển ứng dụng ML/DL/AI, triển khai và vận hành dịch vụ trên môi trường thực tế.
+    Từ 2 năm kinh nghiệm trở lên
+    Kiến thức về lập trình, cấu trúc dữ liệu & giải thuật;
+    Kỹ năng sử dụng ngôn ngữ lập trình Python, Java;
+    Kiến thức về các loại CSDL (SQL/NoSQL);
+    Kiến thức về Machine Learning, Deep Learning, Generative AI.
+    Có hiểu biết về quản trị hệ thống, hạ tầng triển khai AI (Docker, Kubernetes, Cloud AI services) là một lợi thế.
+    Sử dụng thành thạo một trong các thư viện học máy: Scikit-learn, TensorFlow, Keras, PyTorch, LangChain, HuggingFace;
+    Why you'll love working here
+    Thu nhập hấp dẫn, thỏa thuận theo năng lực và kinh nghiệm.
+    Đầy đủ các khoản thưởng: Thưởng lễ Tết, quà tặng, du lịch nghỉ mát, hỗ trợ ăn trưa, cước điện thoại…
+    Nghỉ phép linh hoạt: 12 ngày phép + 3 ngày nghỉ mát + 1 ngày sáng tạo mỗi năm.
+    Bảo hiểm toàn diện: Hưởng đầy đủ BHXH, BHYT, BHTN theo quy định, cộng thêm gói bảo hiểm riêng từ Viettel. Chế độ chăm sóc y tế đặc biệt cho CBNV và người thân với trang thiết bị hiện đại.
+    Môi trường làm việc cởi mở và năng động, khuyến khích trao đổi ý tưởng ở mọi cấp, cho phép bạn làm việc, sáng tạo theo cách riêng.
+    Được khơi gợi cảm hứng làm việc với văn phòng xanh, không gian mở, hiện đại tiêu chuẩn quốc tế.
+    Được thư giãn, khơi nguồn sáng tạo với Happy Time mỗi ngày.
+    Thưởng thức bữa trưa thơm ngon tại Tập đoàn, được chọn lọc bởi các chuyên gia dinh dưỡng.
+    Cơ hội tham gia gắn kết với tập thể, tổ chức với các hoạt động team building
+    Viettel Group
+    3.6
+    SHOW US YOUR WAY
 
-        36 Hoàng Cầu, Dong Da, Ha Noi  At office 11 days ago
-        Skills:
-        Job Expertise:
-        Job Domain:
-        Top 3 reasons to join us
-        Lương/ thưởng hấp dẫn
-        Cơ hội thăng tiến nghề nghiệp cao
-        Môi trường làm việc thân thiện, năng động
-        Job description
-        1. Trách nhiệm trong Xây dựng và quản lý thiết kế nền tảng AI:
-        Thiết kế và xây dựng nền tảng AI nhằm phát triển các ứng dụng AI với các agentic AI và tinh chỉnh các mô hình sử dụng LLM, VLM.
-        Dẫn dắt nhóm phát triển AI thực hiện dự án bằng cách cung cấp hướng dẫn kỹ thuật trong suốt vòng đời phát triển phần mềm.
-        Xác định chiến lược AI và hợp tác chặt chẽ với các bên liên quan trong doanh nghiệp để đảm bảo các giải pháp AI phù hợp với mục tiêu của tổ chức.
-        Thiết kế và tối ưu hóa các mô hình AI để đảm bảo khả năng mở rộng, hiệu suất và hiệu quả.
-        Cung cấp sự lãnh đạo và cố vấn kỹ thuật cho các kỹ sư AI, thúc đẩy văn hóa đổi mới và cải tiến liên tục.
-        Tiến hành nghiên cứu và phát triển chuyên sâu để khám phá các công nghệ và phương pháp luận AI mới.
-        Giám sát việc tích hợp các giải pháp AI với các hệ thống và quy trình kinh doanh hiện có, đảm bảo việc triển khai và vận hành suôn sẻ.
-        Phối hợp với ban lãnh đạo để xác định tầm nhìn và lộ trình AI cho tổ chức
-        2. Thúc đẩy và lan tỏa việc sử dụng AI tới ABBankers và đội ngũ công nghệ:
-        Định kỳ tổ chức các buổi truyền thông về AI và cách sử dụng các ứng dụng AI trên thị trường, và các ứng dụng AI do ABBANK phát triển để giúp người dùng nâng cao nhận thức về AI, nâng cao năng suất, hiệu quả trong công việc.
-        Thu thập các usecase từ người dùng nghiệp vụ ABBANK để đưa vào danh sách phát triển.
-        Thường xuyên tổ chức hoặc dẫn dắt tổ chức các buổi giới thiệu về sản phẩm AI, công nghệ AI, đề xuất ứng dụng AI, ... tới đội ngũ công nghệ nhằm lan tỏa và thúc đẩy việc ứng dụng AI và tích hợp AI vào các giải pháp công nghệ
-        3. Xây dựng kế hoạch ngân sách và quản lý ngân sách bộ phận:
-        Phối Lập ngân sách cho hoạt động của Đơn vị một cách chính xác và hiệu quả.
-        Your skills and experience
-        Bằng cấp: Tốt nghiệp Đại học trở lên các chuyên ngành Công nghệ thông tin/ Điện tử viễn thông/ Toán tin.
-        Kinh nghiệm:
-        Có từ 5 năm kinh nghiệm trở lên trong lĩnh vực AI; đã tham gia trực tiếp xây dựng và dẫn dắt xây dựng các ứng dụng AI
-        Kỹ năng kỹ thuật:
-        Thành thạo ngôn ngữ Python
-        Có kinh nghiệm toàn diện với LangChain API, LLamaIndex và các công nghệ cơ sở dữ liệu (MongoDB, PostgreSQL, ChromaDB, VespaDB, v.v.).
-        Có kinh nghiệm sâu rộng với microservices, Docker và tối ưu hóa, mở rộng microservices.
-        Why you'll love working here
-        Lương và phúc lợi hấp dẫn:
-        Mức lương cạnh tranh, phản ánh trực tiếp kỹ năng và kinh nghiệm của ứng viên (chi tiết sẽ được thảo luận trong buổi phỏng vấn)
-        13 ngày nghỉ phép linh hoạt, bao gồm ngày sinh nhật và các dịp quan trọng khác
-        Bảo hiểm đầy đủ theo luật lao động, cùng với ABBANK CARE - chương trình phúc lợi bổ sung đặc biệt dành cho ABBankers
-        Lãi suất vay ưu đãi - Quyền lợi đặc biệt dành cho nhân viên ABBANK
-        Cơ hội phát triển nghề nghiệp hấp dẫn:
-        Gia nhập các dự án chuyển đổi quy mô lớn, cộng tác cùng các chuyên gia hàng đầu để áp dụng công nghệ mới nhất trong ngành ngân hàng
-        Lộ trình phát triển sự nghiệp rõ ràng, được tạo điều kiện cho cả sự phát triển kỹ thuật và quản lý
-        Hỗ trợ đào tạo và chứng chỉ trong lĩnh vực IT, ngân hàng/tài chính
-        Môi trường làm việc năng động:
-        Mô hình làm việc linh hoạt, trẻ trung, khuyến khích đổi mới và sáng tạo
-        Văn phòng được trang bị hiện đại, kèm theo các thiết bị tiên tiến nhất dành cho nhân viên
-        Tổ chức thường xuyên các hoạt động ngoại khóa (team building, hội thảo, và các sự kiện văn nghệ), tạo điều kiện cho nhân viên gắn kết và phát triển
 
-        ABBANK
-        Cung ứng các sản phẩm - dịch vụ tài chính ngân hàng trọn gói
-        Company typeCompany industryCompany size
-        Non-IT
-        Banking
-        1000+
-        CountryWorking daysOvertime policy
-        VietnamMonday - FridayNo OT
+    Company type
+    Company industry
+    Company size
+    IT Product
+    Telecommunication
+    1000+
+    Country
+    Working days
+    Vietnam
+    Monday - Friday
         """
 
-        jd_text2 = f"""At Jabil we strive to make ANYTHING POSSIBLE and EVERYTHING BETTER. We are proud to be a trusted partner for the world's top brands, offering comprehensive engineering, manufacturing, and supply chain solutions. With over 50 years of experience across industries and a vast network of over 100 sites worldwide, Jabil combines global reach with local expertise to deliver both scalable and customized solutions. Our commitment extends beyond business success as we strive to build sustainable processes that minimize environmental impact and foster vibrant and diverse communities around the globe.
-SUMMARY
-Under limited supervision designs, develops and maintains test procedures, tester hardware and software for electronic circuit board production.
+        jd_text2 = f"""Data Scientist - eKYC
+    Trusting Social
+    2,000 - 3,000 USD
+    Havana Tower - 132 Ham Nghi, District 1, Ho Chi Minh 
+    At office
+    20 hours ago
+    Skills:
+    Job Expertise:
+    Job Domain:
+    Top 3 reasons to join us
+    Top Salary, Awesome Benefits
+    Premium healthcare for 3 members in family
+    Grab to work, Lunch allowance for all employee
+    Job description
+    Trusting Social is an AI Fintech pioneer that's revolutionizing credit access in emerging markets. Our mission is "Advancing AI to Meet the Financial Needs of Everyday Consumers with Empathy." We've assessed over 1 billion consumers across four countries, and we're on a mission to provide 100 million credit lines using the power of AI and Big Data.
 
-ESSENTIAL DUTIES AND RESPONSIBILITIES include the following. Other duties may be assigned.
+    How You'll Make an Impact
+    As a Data Scientist, eKYC at Trusting Social, you will be instrumental in building cutting-edge digital identity verification products for our eKYC (electronic Know Your Customer) projects. Your expertise in machine learning and computer vision will be crucial for developing robust systems to prevent fraud and money laundering. This role offers the opportunity to make a significant impact on revenue while also enhancing financial security, aligning with our strong social mission.
 
-Review circuit board designs for testability requirements.
-Support manufacturing with failure analysis, tester debugging, reduction of intermittent failures and downtime of test equipment.
-Prepare recommendations for testing and documentation of procedures to be used from the product design phase through to initial production.
-Generate reports and analysis of test data, prepares documentation and recommendations.
-Review test equipment designs, data and RMA issues with customers regularly.
-Design, and direct engineering and technical personnel in fabrication of testing and test control apparatus and equipment.
-Direct and coordinate engineering activities concerned with development, procurement, installation, and calibration of instruments, equipment, and control devices required to test, record, and reduce test data.
-Determine conditions under which tests are to be conducted and sequences and phases of test operations.
-Direct and exercise control over operational, functional, and performance phases of tests.
-Perform moderately complex assignments of the engineering test function for standard and/or custom devices.
-Analyze and interpret test data and prepares technical reports for use by test engineering and management personnel.
-Develop or use computer software and hardware to conduct tests on machinery and equipment.
-Perform semi-routine technique development and maintenance, subject to established Jabil standards, including ISO and QS development standards.
-May provide training in new procedures to production testing staff.
-Adhere to all safety and health rules and regulations associated with this position and as directed by supervisor.
-Comply and follow all procedures within the company security policy.
+    What You'll Do
+    Develop Advanced ML Models: Build various machine learning models in computer vision, implementing novel solutions for diverse ML problems (supervised, semi-supervised, unsupervised, one-class).
+    Research & Implement Cutting-Edge Algorithms: Research, design, and implement advanced ML models and algorithms to solve practical problems, optimizing for both performance and speed.
+    Build Practical Vision Systems: Work with high-dimensional image and video data to develop practical vision systems with a direct impact on revenue and profitability.
+    Optimize for Deployment: Optimize and deploy "tiny" ML solutions for limited computation power devices like mobile and web platforms.
+    Your skills and experience
+    We need a qualified, proactive, and technically skilled Computer Vision Data Scientist:
 
-MINIMUM REQUIREMENTS
-Bachelors of Science in Electronics or Electrical Engineering from four-year college or university preferred; or related experience and/or training; or equivalent combination of education and experience.
+    Educational Background: BS/MS/PhD. in Computer Science, Statistics, Mathematics, or a related field.
+    Experience: 4+ years of experience in advanced Machine Learning, with a strong preference for experience in Computer Vision and Image Processing.
+    Technical Proficiency: Must be proficient in Python and have experience with ML frameworks like TensorFlow, PyTorch, and ONNX.
+    Problem-Solving & Insights: You're exceptional at asking the right questions that lead to actionable business insights, and you possess an aptitude for critically evaluating data outcomes, uncovering key insights, and challenging assumptions.
+    Tooling Familiarity: Experience with managing data science and computer vision toolkits such as JupyterHub, CVAT, and OpenCV is a plus.
+    Fundamental Understanding: A solid understanding of machine learning techniques and algorithms.
+    Communication Skills: Ability to communicate complex quantitative analysis in a clear, precise, and actionable manner, coupled with great overall communication skills.
+    Tech Adaptability: A keen interest and proven ability to leverage new technologies to enhance work quality and productivity.
+    Why you'll love working here
+    Competitive compensation package, including 13th-month salary and performance bonuses
+    Comprehensive health care coverage for you and your dependents
+    Generous leave policies, including annual leave, sick leave, and flexible work hours
+    Convenient central district 1 office location, next to a future metro station
+    Onsite lunch with multiple options, including vegetarian
+    Grab for work allowance and fully equipped workstations
+    Fun and engaging team building activities, sponsored sports clubs, and happy hour every Thursday
+    Unlimited free coffee, tea, snacks, and fruit to keep you energized
+    An opportunity to make a social impact by helping to democratize credit access in emerging markets.
+    Trusting Social
+    4.2
+    Making Financial Inclusion a Reality using Machine Learning and AI
 
-LANGUAGE SKILLS
-Ability to read, analyze, and interpret general business periodicals, professional journals, technical procedures, or governmental regulations. Ability to write reports, business correspondence, and procedure manuals. Ability to effectively present information and respond to questions from groups of managers, clients, customers, and the general public.
+    Company type
+    Company industry
+    Company size
+    IT Service and IT Consulting
+    Financial Services
+    301-500
+    Country
+    Working days
+    Singapore
+    Monday - Friday
 
-MATHEMATICAL SKILLS
-Ability to work with mathematical concepts such as probability and statistical inference, and fundamentals of plane and solid geometry and trigonometry. Ability to apply concepts such as fractions, percentages, ratios, and proportions to practical situations.
+        """
 
-REASONING ABILITY
-Ability to define problems, collect data, establish facts, and draw valid conclusions. Ability to interpret an extensive variety of technical instructions in mathematical or diagram form and deal with several abstract and concrete variables.
+        jd_text3 = f"""    AI Engineer (Python,GenAI) - Up to 50M
+    NTT DATA VDS
+    800 - 1,900 USD
+    98 Nguy Nhu Kon Tum, Thanh Xuan, Ha Noi
+    At office
+    19 hours ago
+    Skills:
+    Job Expertise:
+    Job Domain:
+    Top 3 reasons to join us
+    Bonus Bao Viet insurance
+    OT compensation: up to 400%
+    Free account Udemy
+    Job description
+    1. Technical development activities:
 
-PHYSICAL DEMANDS
-The physical demands described here are representative of those that must be met by an employee to successfully perform the essential functions of this job. The employee is frequently required to walk, and to lift and carry PC’s and test equipment weighing up to 50 lbs. Specific vision abilities required by this job include close vision and use of computer monitor screens a great deal of time.
+
+    + Technical analysis of business requirements to implement the application/system
 
 
+    + Draft and update use cases, user stories when required
 
 
-WORK ENVIRONMENT
-The work environment characteristics described here are representative of those an employee encounters while performing the essential functions of this job. Individual’s primary workstation is located in the office area, with some time spent each day on the manufacturing floor. The noise level in this environment ranges from low to moderate.
-BE AWARE OF FRAUD: When applying for a job at Jabil you will be contacted via correspondence through our official job portal with a jabil.com e-mail address; direct phone call from a member of the Jabil team; or direct e-mail with a jabil.com e-mail address. Jabil does not request payments for interviews or at any other point during the hiring process. Jabil will not ask for your personal identifying information such as a social security number, birth certificate, financial institution, driver’s license number or passport information over the phone or via e-mail. If you believe you are a victim of identity theft, contact your local police department. Any scam job listings should be reported to whatever website it was posted in.
-Jabil, including its subsidiaries, is an equal opportunity employer and considers qualified applicants for employment without regard to race, color, religion, national origin, sex, sexual orientation, gender identity, age, disability, genetic information, veteran status, or any other characteristic protected by law.
+    + Setup development/integration environments (Infrastructure, CI/CD Pipeline, Monitoring),  implementation of CI/CD pipelines to automate the software delivery process and integrate tests into the CI/CD pipeline to ensure software quality
 
-Accessibility Accommodation
-If you are a qualified individual with a disability, you have the right to request a reasonable accommodation if you are unable or limited in your ability to use or access Jabil.com/Careers site as a result of your disability. You can request a reasonable accommodation by sending an e-mail to Always_Accessible@Jabil.com with the nature of your request and contact information. Please do not direct any other general employment related questions to this e-mail. Please note that only those inquiries concerning a request for reasonable accommodation will be responded to.
-#whereyoubelong
+
+    + Design, build, review reliable BE and FE code for Generative AI application which will be deployed in Cloud based or on Premises.
+
+
+    + Design, build, review reliable Data processing workflow code which will be deployed in Cloud based or on Premises.
+
+
+    + Prepare unit test cases, E2E automation test and plans.
+
+
+    + Analysis and resolution of incidents, provision of new (bug fix) releases for delivery and rollout of the software
+
+
+    + Follow guidelines from Control, Quality and Procedures Section: JIRA workflow, DevOps and build strategies, software development standards and best practices, security instructions,…
+
         """
         app.extract_text(jd_text1)
+        app.extract_text(jd_text2)
+        app.extract_text(jd_text3)
