@@ -1,6 +1,8 @@
-import { user, password } from "../../constants/icons";
+import { user, password, close } from "../../constants/icons";
+import { useNavigate } from "react-router-dom";
 
 const Signin = () => {
+  const navigate = useNavigate();
   return (
     <div
       className="w-full h-screen flex flex-col justify-center items-center"
@@ -11,6 +13,14 @@ const Signin = () => {
     >
       <div className="w-[40%] h-[65%] flex flex-col justify-center items-center">
         <div className="w-[80%] h-[70%] bg-white/40 p-8 rounded-2xl shadow-[0_0_9px_0px_rgba(0,0,0,0.25)] relative">
+          <div
+            onClick={() => {
+              navigate("/");
+            }}
+            className="self-end hover:cursor-pointer absolute top-6 right-6"
+          >
+            <img src={close} alt="Close sign up" className="w-4 h-4" />
+          </div>
           <h1 className="text-center font-semibold text-3xl my-6 text-[#19335A]">
             Sign in
           </h1>

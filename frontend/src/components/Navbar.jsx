@@ -1,7 +1,9 @@
 import avatar from "../assets/images/avatar.png";
 import { companyLogos } from "../constants/images";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = ({ isActive, setIsActive, button }) => {
+  const navigate = useNavigate();
   return (
     <div className="pt-10 pb-8 flex flex-col items-center space-y-8">
       <div className="space-y-4">
@@ -31,7 +33,12 @@ const Navbar = ({ isActive, setIsActive, button }) => {
           </div>
         ))}
       </div>
-      <button className="flex justify-center items-center space-x-4 mt-20 p-2 cursor-pointer">
+      <button
+        onClick={() => {
+          navigate("/");
+        }}
+        className="flex justify-center items-center space-x-4 mt-20 p-2 cursor-pointer"
+      >
         <h1 className="font-semibold text-white text-lg">Logout</h1>
         <img src={companyLogos.logout} alt="Logout" className="w-7 h-7" />
       </button>
