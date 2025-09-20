@@ -1,0 +1,5 @@
+.env
+id2title.pkl
+jobs_index.faiss
+output.tex
+__pycache__/
