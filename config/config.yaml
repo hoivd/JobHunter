@@ -1,0 +1,5 @@
+app_name: JobHunter
+version: 1.0
+
+logging:
+  level: INFO

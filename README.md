@@ -9,7 +9,8 @@ Agent này có thể:
 - 📂 Liệt kê file trong một repo GitHub  
 - 📖 Đọc nội dung file (ví dụ: `README.md`)  
 - 🛑 Kết thúc hội thoại khi bạn nói *cảm ơn*, *muốn dừng*, *thoát*...  
-- 💬 Giao tiếp hội thoại nhiều lượt (có memory)  
+- 💬 Giao tiếp hội thoại nhiều lượt (có memory) 
+- Tìm kiếm thông tin cần tìm trong graphDB 
 
 ---
 
@@ -30,10 +31,12 @@ Tạo file `.env` trong thư mục gốc và thêm:
 ```env
 GOOGLE_API_KEY=your_gemini_api_key
 GITHUB_TOKEN=your_github_token
+NEO4J_TOKEN = ....
 ```
 
 - **GOOGLE_API_KEY**: API key từ [Google AI Studio](https://makersuite.google.com/app/apikey).  
 - **GITHUB_TOKEN**: [Personal Access Token](https://github.com/settings/tokens) từ GitHub (nếu repo private thì cần scope `repo`).  
+- NEO4J TOKEN thì tạo Instance neo4j aura rồi download paste vào env
 
 ---
 
@@ -42,7 +45,7 @@ GITHUB_TOKEN=your_github_token
 Chạy script hội thoại:
 
 ```bash
-python conversation_git.py
+python main.py
 ```
 
 ---
@@ -72,6 +75,8 @@ Bạn: Cảm ơn, dừng lại.
 - **ReadFile** → Đọc nội dung file từ repo.  
 - **ListFiles** → Liệt kê file/thư mục trong repo (dùng `'/'` để chỉ thư mục gốc).  
 - **StopConversation** → Dùng khi muốn kết thúc hội thoại.  
+- **GenerateCypherQuery** -> Tạo ra code cypher.
+- **RunCypherQuery** -> Run code cypher trên neo4j để hiện kết quả
 
 ---
 
