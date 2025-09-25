@@ -19,9 +19,9 @@ def main():
 
 def test_neo4j():
     with Neo4jDriver() as db:
-        q = "RETURN 'Hello Neo4j' AS msg"
+        q = "CREATE (n:TestNode {name: 'Test'}) RETURN n"
         res = db.run_query(q)
         print(res)
 
 if __name__ == '__main__':
-    main()
+    test_neo4j()
