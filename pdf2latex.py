@@ -1,20 +1,18 @@
 import base64
 from pathlib import Path
-from dotenv import load_dotenv
-import os
 import google.generativeai as genai
-from utils import extract_latex, extract_links_from_pdf
-from prompt import pdf_to_json_prompt
-# Load API key
-load_dotenv()
-GEMINI_API_KEY = os.getenv("GOOGLE_API_KEY")
+from utils import Utils
+from prompts.pdf_to_json_prompt import pdf_to_json_prompt
+from config.settings import Settings
+
+GEMINI_API_KEY = Settings.GOOGLE_API_KEY
 if not GEMINI_API_KEY:
     raise ValueError("GEMINI_API_KEY chưa được thiết lập trong .env")
 
 genai.configure(api_key=GEMINI_API_KEY)
 
 
-def pdf_to_latex_with_links(pdf_path: str, model: str = "gemini-2.5-flash") -> str:
+def pdf_to_latex_with_links(pdf_path: str, model: str = "gemini-2.5-flash-lite") -> str:
     """
     Chuyển PDF thành LaTeX, đảm bảo giữ đúng hyperlink gốc trong file.
     """
@@ -24,9 +22,10 @@ def pdf_to_latex_with_links(pdf_path: str, model: str = "gemini-2.5-flash") -> s
 
     pdf_base64 = base64.b64encode(pdf_file.read_bytes()).decode("utf-8")
 
-    links = extract_links_from_pdf(pdf_path)
+    links = Utils.extract_links_from_pdf(pdf_path)
     
-    prompt_text = pdf_to_json_prompt.format(links=links)
+    prompt_text = pdf_to_json_prompt()
+    prompt_text = prompt_text.format(links=links)
 
     model = genai.GenerativeModel(model)
 
@@ -39,8 +38,8 @@ def pdf_to_latex_with_links(pdf_path: str, model: str = "gemini-2.5-flash") -> s
     ])
 
     output = response.text
-    output_latex = extract_latex(output)
-    with open("output.tex", "w", encoding="utf-8") as f:
+    output_latex = Utils.extract_latex(output)
+    with open("data/output.tex", "w", encoding="utf-8") as f:
         f.write(output_latex)
     return output_latex
     
