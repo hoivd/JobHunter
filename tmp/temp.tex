@@ -1,0 +1,79 @@
+\documentclass[11pt,a4paper,sans]{moderncv}
+
+\moderncvstyle{banking}
+\moderncvcolor{blue}
+
+\usepackage[scale=0.91]{geometry}
+
+\name{Pham Duc Huy}{Hoang}
+\title{AI Engineer Intern}
+\phone[mobile]{(+84) 378 297 062}
+\email{huyhoang.190904@gmail.com}
+\social[github]{hein-nkhh}
+
+\begin{document}
+\makecvtitle
+
+\section{Summary}
+Junior Computer Science student at \textbf{UIT – VNUHCM} with strong skills in \textbf{Machine Learning}, \textbf{Deep Learning}, and \textbf{NLP}. Passionate about applying AI in \textbf{NLP}, \textbf{Computer Vision}, and \textbf{Multimodal AI}. Seeking an AI Engineer Intern position to contribute to impactful projects while sharpening real-world engineering skills.
+
+\section{Education}
+\cventry{9/2022--1/2026 (expected)}{Bachelor of Computer Science}{University of Information Technology (UIT)}{HCMC, Vietnam}{}{
+GPA: 8.53/10.0 (current)
+}
+\section{Technical Skills}
+\cvitem{Programming}{Python, JavaScript (HTML/CSS), SQL}
+\cvitem{AI/ML}{PyTorch, scikit-learn, NLP, Computer Vision}
+\cvitem{Tools}{Git, Docker, Linux, Microsoft SQL Server}
+
+\section{Projects}
+
+\cvitem{AI-Powered Risk Analysis for AML Case Review \hfill Team Size: 5 \hfill 07/2025 -- 08/2025 \href{https://github.com/hoivd/VPBankHackathon}{[GitHub]}}
+{\begin{itemize}
+  \item Built an AI-powered platform to automate adverse media screening in Anti-Money Laundering (AML) case review.
+  \item Developed data pipelines to crawl news sites, social media, and sanction lists; applied LLM-based entity extraction, risk tagging, and semantic matching with embeddings + FAISS.
+  \item Designed and maintained a blacklist database with intelligent cross-identification to merge duplicates, retrieve historical entities, provide matching score models, and a recommendation interface for AML specialists.
+  \item Delivered high-accuracy performance (\textbf{Accuracy@1: 98.63\%}) with near real-time entity matching and risk assessment.
+  \item Deployed a complete AWS-based system including backend, frontend, and autonomous agents.
+\end{itemize}}
+
+
+
+\cvitem{ENT Endoscopy Images Retrieval \hfill Team Size: 3 \hfill 06/2025 -- 08/2025 \href{https://github.com/hein-nkhh/ENTRep-ACMMM25-TRACK-3}{[GitHub]}}
+{\begin{itemize}
+  \item Built a multi-stage retrieval system for ENT images using NanoCLIP (bi-encoder) for candidate search and Gemini for semantic/clinical re-ranking.
+  \item Created \textbf{Pos-Fuse} score fusion algorithm integrating visual similarity and multimodal reasoning, boosting clinical retrieval relevance.
+\end{itemize}}
+
+\cvitem{Endless Runner Game \hfill Team Size: 3 \hfill 05/2025 -- 06/2025 \href{https://github.com/Hozngvan/endlessRunnerGame}{[GitHub]}}
+{\begin{itemize}
+  \item Built a 3D-like endless runner using vanilla HTML, CSS and JavaScript (no game engine); implemented core mechanics including lane switching, jumping, and obstacle avoidance controlled by arrow keys.
+  \item Implemented dynamic difficulty with progressive speed increase, alternating light/dark modes, and varied obstacle types; added power-ups (shield, high-jump boots, perspective switch) to enhance gameplay.
+  \item Integrated a real-time leaderboard using a Node.js backend and MongoDB for persistent score storage and live updates.
+\end{itemize}}
+
+\cvitem{Segmentation and QA Datasets (MEDIQA-MAGIC 2025) \hfill Team Size: 4 \hfill 05/2025 -- 06/2025 \href{https://github.com/lenguyen2592004/MEDIA-MAGIC-CLEF2025}{[GitHub]}}
+{\begin{itemize}
+  \item Adapted DermoSegDiff (MICCAI 2023) for skin lesion segmentation with diffusion-based approach and boundary-aware loss.
+  \item Developed a knowledge-enhanced VQA ensemble combining Gemini 2.5, MUMC, and external medical databases for dermatology QA.
+  \item Applied genetic algorithms for image preprocessing and optimization, improving segmentation and QA performance.
+\end{itemize}}
+
+\cvitem{Legal Document Retrieval \hfill Team Size: 4 \hfill 10/2024 -- 12/2024 \href{https://github.com/hoanglvuit/Legal-Document-Retrieval.git}{[GitHub]}}
+{\begin{itemize}
+  \item Built a legal document retrieval system using Bi-Encoder for candidate retrieval and Cross-Encoder for relevance ranking, enabling effective retrieval from text-based queries
+  \item Fine-tuned Bi-Encoder with Multi-Negative Ranking Loss and improved Cross-Encoder using negative mining to overcome QA-only dataset limitations.
+  \item Enhanced retrieval accuracy for text-based legal queries in Vietnamese law domain.
+\end{itemize}}
+
+
+\section{Certifications}
+\cvitem{TOEIC Speaking \& Writing (290/400)}{2024}
+\cvitem{Applications of AI for Anomaly Detection}{NVIDIA (2025)}
+
+\section{Research and Competitions}
+\cvitem{SoICT Hackathon 2024}{Top 3 – Legal Document Retrieval}
+\cvitem{ImageCLEFmed MEDIQA-MAGIC 2025}{Top 5, Top 1 – Segmentation and QA Datasets}
+\cvitem{ENTRep ACMMM 2025}{Top 5 – ENT Endoscopy Images Retrieval}
+\cvitem{VPBANK TECHNOLOGY HACKATHON 2025}{Final Round Participant – AI-Powered Risk Analysis for AML Case Review}
+\end{document}
