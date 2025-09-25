@@ -1,5 +1,7 @@
 .env
 id2title.pkl
 jobs_index.faiss
+output.cypher
 output.tex
 __pycache__/
+log/
