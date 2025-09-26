@@ -2,3 +2,9 @@ __pycache__/
 data/
 .env
 log/
+data.aux
+data.log
+data.out
+data.pdf
+data.synctex.gz
+tmp/
