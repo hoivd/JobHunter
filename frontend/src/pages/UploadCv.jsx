@@ -5,7 +5,7 @@ import GithubAttached from "../components/UploadCV/GithubAttached";
 const UploadCv = () => {
   return (
     <div className="bg-[#f3fdfe] h-screen rounded-l-4xl pl-10 flex items-center justify-center">
-      <div className="w-[80%] h-[70%] bg-white shadow-lg rounded-3xl flex flex-col items-center justify-center space-y-8 my-4">
+      <div className="w-[80%] py-4 bg-white shadow-lg rounded-3xl flex flex-col items-center justify-center space-y-8 my-4">
         <div className="grid grid-cols-[48%_1%_48%] w-full justify-between">
           <FileUpload />
           <div>
