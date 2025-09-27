@@ -10,6 +10,7 @@ import password from "../assets/icons/password.png";
 import close from "../assets/icons/close.png";
 import robot from "../assets/icons/robot.png";
 import right from "../assets/icons/right.png";
+import ai from "../assets/icons/ai.png";
 
 export {
   salary,
@@ -24,4 +25,5 @@ export {
   close,
   robot,
   right,
+  ai,
 };
