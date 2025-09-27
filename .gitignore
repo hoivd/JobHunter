@@ -5,3 +5,4 @@ output.cypher
 output.tex
 __pycache__/
 log/
+.cache/
