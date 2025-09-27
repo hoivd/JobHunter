@@ -1,200 +1,306 @@
-import React, { useEffect, useRef } from 'react';
-import * as d3 from 'd3';
+import React, { useEffect, useRef } from "react";
+import * as d3 from "d3";
 
-const colorMap = {
-  '*': '#9B59B6', 'Benefit': '#27AE60', 'Benefits': '#E67E22',
-  'Candidate': '#5DADE2', 'Certificate': '#566573', 'Certificates': '#7D6608',
-  'Company': '#F5B7B1', 'Degree': '#AF7AC5', 'Degrees': '#B9770E',
-  'Education': '#EC7063', 'Educations': '#82E0AA', 'Experience': '#F5B7B1',
-  'Experiences': '#27AE60', 'JD': '#AF7AC5', 'JobTitle': '#F4D03F',
-  'Language': '#F4D03F', 'Languages': '#AF7AC5', 'Location': '#F5B7B1',
-  'Locations': '#F4D03F', 'Project': '#48C9B0', 'Projects': '#F39C12',
-  'Skill': '#82E0AA', 'Skills': '#E74C3C', 'Task': '#82E0AA', 'Tasks': '#F39C12'
+// --- [PALETTE] ---
+const palette = {
+  forest: { dark: "#215732", mid: "#4C9141", light: "#A7D08C" },
+  marigold: { dark: "#FF8C00", mid: "#FFB347", light: "#FFD580" },
+  hibiscus: { dark: "#E32636", mid: "#F75C57", light: "#F6A5A1" },
 };
+
+// --- [MAPPING] ---
+const colorMap = {
+  JD: palette.forest.dark,
+  Candidate: palette.hibiscus.dark,
+  Company: palette.marigold.dark,
+  Project: palette.forest.dark,
+  Experience: palette.marigold.dark,
+  Education: palette.hibiscus.dark,
+
+  Skills: palette.forest.mid,
+  Certificates: palette.marigold.mid,
+  Tasks: palette.hibiscus.mid,
+  Locations: palette.forest.mid,
+  Languages: palette.marigold.mid,
+  Degrees: palette.hibiscus.mid,
+  Benefits: palette.marigold.mid,
+
+  Skill: palette.forest.light,
+  Certificate: palette.marigold.light,
+  Task: palette.hibiscus.light,
+  Location: palette.forest.light,
+  Language: palette.marigold.light,
+  Degree: palette.hibiscus.light,
+  Benefit: palette.marigold.light,
+
+  "*": "#ccc",
+};
+
+const lightColors = [palette.hibiscus.light];
+function randomLight() {
+  return lightColors[Math.floor(Math.random() * lightColors.length)];
+}
+
+function drag(simulation) {
+  return d3
+    .drag()
+    .on("start", (event, d) => {
+      if (!event.active) simulation.alphaTarget(0.3).restart();
+      d.fx = d.x;
+      d.fy = d.y;
+    })
+    .on("drag", (event, d) => {
+      d.fx = event.x;
+      d.fy = event.y;
+    })
+    .on("end", (event, d) => {
+      if (!event.active) simulation.alphaTarget(0);
+      d.fx = null;
+      d.fy = null;
+    });
+}
 
 export default function Graph() {
   const svgRef = useRef();
 
   useEffect(() => {
-    fetch('http://127.0.0.1:8000/api/graph')
-      .then(res => res.json())
-      .then(data => {
-        const width = 900;
-        const height = 700;
-        const svg = d3.select(svgRef.current)
-          .attr('width', width)
-          .attr('height', height)
-          .style('border', '1px solid #ccc')
-          .style('background', '#1e1e1e');
+    const width = 1000;
+    const height = 800;
 
-        svg.selectAll('*').remove();
-        const g = svg.append('g');
+    const svg = d3
+      .select(svgRef.current)
+      .attr("width", width)
+      .attr("height", height)
+      .style("border", "1px solid #ccc")
+      .style("background", "#1e1e1e");
 
-        svg.call(d3.zoom().scaleExtent([0.1, 5]).on("zoom", (event) => {
+    svg.selectAll("*").remove();
+
+    const g = svg.append("g");
+
+    // --- [ZOOM] ---
+    svg.call(
+      d3
+        .zoom()
+        .scaleExtent([0.2, 5])
+        .on("zoom", (event) => {
           g.attr("transform", event.transform);
-        }));
+        })
+    );
 
-        const tooltip = d3.select('body').append('div')
-          .style('position', 'absolute')
-          .style('padding', '6px 10px')
-          .style('background', 'rgba(0,0,0,0.7)')
-          .style('color', '#fff')
-          .style('border-radius', '4px')
-          .style('pointer-events', 'none')
-          .style('opacity', 0);
+    // --- [TOOLTIP] ---
+    const tooltip = d3
+      .select("body")
+      .append("div")
+      .attr("class", "graph-tooltip")
+      .style("position", "absolute")
+      .style("padding", "8px 12px")
+      .style("background", "rgba(0,0,0,0.85)")
+      .style("color", "#fff")
+      .style("border-radius", "6px")
+      .style("font-size", "13px")
+      .style("max-width", "280px")
+      .style("pointer-events", "none")
+      .style("opacity", 0);
 
-        const shortLabel = (label) => label.length > 8 ? label.slice(0, 8) + '…' : label;
-
-        // Simulation
-        const simulation = d3.forceSimulation(data.nodes)
-          .force('link', d3.forceLink(data.links).id(d => d.id).distance(120).strength(1))
-          .force('charge', d3.forceManyBody().strength(-400))
-          .force('center', d3.forceCenter(width / 2, height / 2))
-          .force('collision', d3.forceCollide().radius(20));
-
-        svg.append('defs').append('marker')
-          .attr('id', 'arrow')
-          .attr('viewBox', '0 -5 10 10')
-          .attr('refX', 20)
-          .attr('refY', 0)
-          .attr('markerWidth', 6)
-          .attr('markerHeight', 6)
-          .attr('orient', 'auto')
-          .append('path')
-          .attr('d', 'M0,-5L10,0L0,5')
-          .attr('fill', '#999');
-
-        // Map đếm số link giữa 2 node
-        const linkCountMap = {};
-        data.links.forEach((l, i) => {
-          const key = [l.source.id, l.target.id].sort().join('-');
-          if (!linkCountMap[key]) linkCountMap[key] = [];
-          linkCountMap[key].push(i);
+    fetch("http://127.0.0.1:8000/api/graph")
+      .then((res) => res.json())
+      .then((data) => {
+        // --- link song song ---
+        const linkCounts = {};
+        data.links.forEach((l) => {
+          const key = [l.source, l.target].sort().join("-");
+          linkCounts[key] = (linkCounts[key] || 0) + 1;
+          l.linkIndex = linkCounts[key];
         });
 
-        // Links
-        const link = g.append('g')
-          .attr('stroke', '#999')
-          .attr('stroke-opacity', 0.6)
-          .selectAll('line')
-          .data(data.links)
-          .join('line')
-          .attr('stroke-width', 1.5)
-          .attr('marker-end', 'url(#arrow)');
+        // --- [FORCE SIMULATION] ---
+        const simulation = d3
+          .forceSimulation(data.nodes)
+          .force(
+            "link",
+            d3
+              .forceLink(data.links)
+              .id((d) => d.id)
+              .distance((d) => {
+                if (
+                  d.source.properties?.type === "main" &&
+                  d.target.properties?.type === "property"
+                ) {
+                  return 150; // main ↔ property xa hơn
+                }
+                if (
+                  d.target.properties?.type === "main" &&
+                  d.source.properties?.type === "property"
+                ) {
+                  return 150;
+                }
+                return 80; // mặc định
+              })
+          )
 
-        // Nodes
-        const node = g.append('g')
-          .attr('stroke', '#fff')
-          .attr('stroke-width', 1.5)
-          .selectAll('circle')
+          .force("charge", d3.forceManyBody().strength(-250))
+          .force("center", d3.forceCenter(width / 2, height / 2))
+          .force("collision", d3.forceCollide().radius(30));
+
+        // --- [ARROW MARKER nhỏ hơn] ---
+        svg
+          .append("defs")
+          .append("marker")
+          .attr("id", "arrowhead")
+          .attr("viewBox", "0 -5 10 10")
+          .attr("refX", 45)
+          .attr("refY", 0)
+          .attr("markerWidth", 3)
+          .attr("markerHeight", 3)
+          .attr("orient", "auto")
+          .append("path")
+          .attr("d", "M0,-5L10,0L0,5")
+          .attr("fill", "#bbb");
+
+        // --- [LINKS] ---
+        const link = g
+          .append("g")
+          .attr("stroke", "#aaa")
+          .attr("stroke-opacity", 0.6)
+          .selectAll("path")
+          .data(data.links)
+          .join("path")
+          .attr("stroke-width", 2.0)
+          .attr("fill", "none")
+          .attr("marker-end", "url(#arrowhead)")
+          .attr("id", (d, i) => `link-${i}`)
+          .style("cursor", "pointer"); // 🔹 hover vào link = pointer
+
+        // --- [NODES] ---
+        const node = g
+          .append("g")
+          .selectAll("circle")
           .data(data.nodes)
-          .join('circle')
-          .attr('r', 15)
-          .attr('fill', d => colorMap[d.label] || '#ccc')
+          .join("circle")
+          .attr("r", (d) => {
+            if (d.label === "Skills") return 32;
+            if (
+              [
+                "Skill",
+                "Certificate",
+                "Task",
+                "Location",
+                "Language",
+                "Degree",
+                "Benefit",
+              ].includes(d.label)
+            )
+              return 16;
+            return 22;
+          })
+          .attr("fill", (d) =>
+            colorMap[d.label] ? colorMap[d.label] : randomLight()
+          )
+          .attr("stroke", "#fff")
+          .attr("stroke-width", 1.5)
           .call(drag(simulation))
-          .on('mouseover', (event, d) => {
-            tooltip.transition().duration(200).style('opacity', 1);
-            tooltip.html(`<strong>${d.label}</strong>`)
-              .style('left', event.pageX + 10 + 'px')
-              .style('top', event.pageY + 10 + 'px');
+          .on("mouseover", (event, d) => {
+            tooltip.transition().duration(200).style("opacity", 0.9);
+            tooltip
+              .html(
+                `<div>${d.label}</div>
+                 ${
+                   d.properties
+                     ? `<div><strong>Properties:</strong><br/>${Object.entries(
+                         d.properties
+                       )
+                         .map(([k, v]) => `${k}: ${v}`)
+                         .join("<br/>")}</div>`
+                     : ""
+                 }`
+              )
+              .style("left", event.pageX + 12 + "px")
+              .style("top", event.pageY + 12 + "px");
           })
-          .on('mousemove', (event) => {
-            tooltip.style('left', event.pageX + 10 + 'px').style('top', event.pageY + 10 + 'px');
-          })
-          .on('mouseout', () => tooltip.transition().duration(200).style('opacity', 0))
-          .on('click', (event, d) => alert(`Node details:\nID: ${d.id}\nLabel: ${d.label}`));
+          .on("mousemove", (event) =>
+            tooltip
+              .style("left", event.pageX + 12 + "px")
+              .style("top", event.pageY + 12 + "px")
+          )
+          .on("mouseout", () =>
+            tooltip.transition().duration(200).style("opacity", 0)
+          );
 
-        // Node labels
-        const label = g.append('g')
-          .selectAll('text')
+        // --- [NODE LABELS] ---
+        const shortLabel = (label) =>
+          label.length > 10 ? label.slice(0, 10) + "…" : label;
+
+        const nodeLabel = g
+          .append("g")
+          .selectAll("text")
           .data(data.nodes)
-          .join('text')
-          .text(d => shortLabel(d.label))
-          .attr('fill', '#fff')
-          .attr('font-size', 12)
-          .attr('dx', 18)
-          .attr('dy', 4);
+          .join("text")
+          .text((d) => shortLabel(d.label))
+          .attr("fill", "#000")
+          .attr("font-size", 9)
+          .attr("text-anchor", "middle")
+          .attr("dy", 3);
 
-        // Link labels
-        const linkLabel = g.append('g')
-          .selectAll('text')
+        // --- [RELATIONSHIP LABELS] (ẩn mặc định) ---
+        const linkLabel = g
+          .append("g")
+          .selectAll("text")
           .data(data.links)
-          .join('text')
-          .text(d => d.type)
-          .attr('fill', '#aaa')
-          .attr('font-size', 10)
-          .attr('text-anchor', 'middle')
-          .style('pointer-events', 'none');
+          .join("text")
+          .attr("font-size", 6)
+          .attr("fill", "#FFD700")
+          .style("opacity", 0) // 🔹 ẩn mặc định
+          .append("textPath")
+          .attr("xlink:href", (d, i) => `#link-${i}`)
+          .attr("startOffset", "50%")
+          .style("text-anchor", "middle")
+          .text((d) => d.type)
+          .attr("font-size", 12);
 
-        // Tick update
-        simulation.on('tick', () => {
-          link.attr('x1', d => {
-            const key = [d.source.id, d.target.id].sort().join('-');
-            const index = linkCountMap[key].indexOf(data.links.indexOf(d));
-            const total = linkCountMap[key].length;
-            const offset = (index - (total - 1) / 2) * 6; // khoảng cách giữa các link
-            const dx = d.target.x - d.source.x;
-            const dy = d.target.y - d.source.y;
-            const len = Math.sqrt(dx*dx + dy*dy);
-            return d.source.x - offset * dy / len;
+        // --- hover vào link thì hiện label ---
+        link
+          .on("mouseover", function (event, d) {
+            d3.select(this).attr("stroke", "#FFD700");
+            g.selectAll("text")
+              .filter((l) => l === d) // lọc đúng label link đó
+              .style("opacity", 1);
           })
-          .attr('y1', d => {
-            const key = [d.source.id, d.target.id].sort().join('-');
-            const index = linkCountMap[key].indexOf(data.links.indexOf(d));
-            const total = linkCountMap[key].length;
-            const offset = (index - (total - 1) / 2) * 6;
-            const dx = d.target.x - d.source.x;
-            const dy = d.target.y - d.source.y;
-            const len = Math.sqrt(dx*dx + dy*dy);
-            return d.source.y + offset * dx / len;
-          })
-          .attr('x2', d => {
-            const key = [d.source.id, d.target.id].sort().join('-');
-            const index = linkCountMap[key].indexOf(data.links.indexOf(d));
-            const total = linkCountMap[key].length;
-            const offset = (index - (total - 1) / 2) * 6;
-            const dx = d.target.x - d.source.x;
-            const dy = d.target.y - d.source.y;
-            const len = Math.sqrt(dx*dx + dy*dy);
-            return d.target.x - offset * dy / len;
-          })
-          .attr('y2', d => {
-            const key = [d.source.id, d.target.id].sort().join('-');
-            const index = linkCountMap[key].indexOf(data.links.indexOf(d));
-            const total = linkCountMap[key].length;
-            const offset = (index - (total - 1) / 2) * 6;
-            const dx = d.target.x - d.source.x;
-            const dy = d.target.y - d.source.y;
-            const len = Math.sqrt(dx*dx + dy*dy);
-            return d.target.y + offset * dx / len;
+          .on("mouseout", function (event, d) {
+            d3.select(this).attr("stroke", "#aaa");
+            g.selectAll("text")
+              .filter((l) => l === d)
+              .style("opacity", 0);
           });
 
-          node.attr('cx', d => d.x).attr('cy', d => d.y);
-          label.attr('x', d => d.x).attr('y', d => d.y);
-          linkLabel.attr('x', d => (d.source.x + d.target.x)/2)
-                   .attr('y', d => (d.source.y + d.target.y)/2);
+        // --- [TICK UPDATE] ---
+        simulation.on("tick", () => {
+          link.attr("d", (d) => {
+            const dx = d.target.x - d.source.x;
+            const dy = d.target.y - d.source.y;
+            const dr = Math.sqrt(dx * dx + dy * dy);
+
+            const angle = Math.atan2(dy, dx);
+            const offset = (d.linkIndex - 1) * 30;
+
+            const mx =
+              (d.source.x + d.target.x) / 2 +
+              offset * Math.cos(angle + Math.PI / 2);
+            const my =
+              (d.source.y + d.target.y) / 2 +
+              offset * Math.sin(angle + Math.PI / 2);
+
+            return `M${d.source.x},${d.source.y} Q${mx},${my} ${d.target.x},${d.target.y}`;
+          });
+
+          node.attr("cx", (d) => d.x).attr("cy", (d) => d.y);
+          nodeLabel.attr("x", (d) => d.x).attr("y", (d) => d.y);
         });
 
-        function drag(simulation) {
-          function dragstarted(event, d) {
-            if (!event.active) simulation.alphaTarget(0.3).restart();
-            d.fx = d.x;
-            d.fy = d.y;
-          }
-          function dragged(event, d) {
-            d.fx = event.x;
-            d.fy = event.y;
-          }
-          function dragended(event, d) {
-            if (!event.active) simulation.alphaTarget(0);
-            d.fx = null;
-            d.fy = null;
-          }
-          return d3.drag()
-            .on('start', dragstarted)
-            .on('drag', dragged)
-            .on('end', dragended);
-        }
+        return () => {
+          simulation.stop();
+          tooltip.remove();
+        };
       });
   }, []);
 
