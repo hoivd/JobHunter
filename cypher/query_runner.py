@@ -24,7 +24,7 @@ class Neo4jQueryRunner:
         """Thực thi query và log kết quả."""
         try:
             logger.debug(f"▶️ Query:\n{query}\nParams: {params}")
-            query = Utils.extract_cypher(query)
+            # query = Utils.extract_cypher(query)
             result = self.driver.run_query(query, params or {})
             
 

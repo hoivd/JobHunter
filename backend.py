@@ -4,7 +4,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 import asyncio
 from concurrent.futures import ThreadPoolExecutor
-
+import subprocess
 
 # IMPORT AGENT CỦA BẠN -------------------------------------------------
 # đảm bảo python có thể import package 'agent' (chạy uvicorn từ thư mục gốc hoặc set PYTHONPATH)
@@ -69,3 +69,11 @@ async def websocket_chat(websocket: WebSocket):
             await websocket.send_text(response)
     except Exception:
         await websocket.close()
+        
+@app.on_event("startup")
+async def startup_event():
+    loop = asyncio.get_running_loop()
+    # chạy build_index trong thread pool để không block event loop
+    def run_index():
+        subprocess.run(["python", "-m", "retrieval.build_index"], check=True)
+    await loop.run_in_executor(executor, run_index)
