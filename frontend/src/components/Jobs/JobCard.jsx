@@ -1,13 +1,18 @@
 import { address, salary } from "../../constants/icons";
+import { useSavedJobs } from "../../context/SavedJobsContext";
+import { save, saved } from "../../constants/icons";
 
 const JobCard = ({ job, setIsJobComp }) => {
+  const { savedJobs, toggleSaveJob } = useSavedJobs();
+  const isSaved = savedJobs.some((j) => j.id === job.id);
+
   return (
     <div
       onClick={() => setIsJobComp(job)}
       className="w-full  max-h-[450px] bg-white shadow-md rounded-2xl 
              py-4 px-6 flex flex-col justify-between space-y-2 
              hover:brightness-105 hover:scale-[1.02] 
-             duration-300 transform transition-all cursor-pointer"
+             duration-300 transform transition-all cursor-pointer relative"
     >
       <div className="flex space-x-4">
         <img
@@ -50,6 +55,19 @@ const JobCard = ({ job, setIsJobComp }) => {
         </button>
         <button className=" text-[12px] py-2 px-8 bg-[#19335a] text-white rounded-2xl hover:brightness-120 cursor-pointer hover:scale-95 duration-300 transform transition-all">
           <p className="font-semibold">Detail JD</p>
+        </button>
+        <button
+          onClick={(e) => {
+            e.stopPropagation();
+            toggleSaveJob(job);
+          }}
+          className="w-8 h-8 absolute top-2 right-5 bg-gray-100 flex justify-center items-center rounded-lg hover:cursor-pointer"
+        >
+          {isSaved ? (
+            <img src={saved} alt="Saved" className="w-6 h-6" />
+          ) : (
+            <img src={save} alt="Save" className="w-6 h-6" />
+          )}
         </button>
       </div>
     </div>

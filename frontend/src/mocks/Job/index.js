@@ -2,6 +2,7 @@ import { companyLogos } from "../../constants/images";
 
 export const job_description = [
   {
+    id: 1,
     company: "Google",
     img: companyLogos.google,
     position: "Software Engineer",
@@ -26,6 +27,7 @@ export const job_description = [
     ],
   },
   {
+    id: 2,
     company: "Microsoft",
     img: companyLogos.ms,
     position: "Cloud Solutions Architect",
@@ -50,6 +52,7 @@ export const job_description = [
     ],
   },
   {
+    id: 3,
     company: "Amazon",
     img: companyLogos.aws,
     position: "Data Engineer",
@@ -74,6 +77,7 @@ export const job_description = [
     ],
   },
   {
+    id: 4,
     company: "Meta",
     img: companyLogos.meta,
     position: "Machine Learning Engineer",
@@ -98,6 +102,7 @@ export const job_description = [
     ],
   },
   {
+    id: 5,
     company: "Apple",
     img: companyLogos.apple,
     position: "iOS Developer",
@@ -122,6 +127,7 @@ export const job_description = [
     ],
   },
   {
+    id: 6,
     company: "IBM",
     img: companyLogos.ibm,
     position: "Cybersecurity Analyst",
@@ -147,6 +153,7 @@ export const job_description = [
     ],
   },
   {
+    id: 7,
     company: "Netflix",
     img: companyLogos.netflix,
     position: "Backend Engineer",
@@ -171,6 +178,7 @@ export const job_description = [
     ],
   },
   {
+    id: 8,
     company: "Tesla",
     img: companyLogos.tesla,
     position: "Embedded Systems Engineer",
@@ -195,6 +203,7 @@ export const job_description = [
     ],
   },
   {
+    id: 9,
     company: "Oracle",
     img: companyLogos.oracle,
     position: "Database Administrator",
@@ -219,6 +228,7 @@ export const job_description = [
     ],
   },
   {
+    id: 10,
     company: "Adobe",
     img: companyLogos.adobe,
     position: "UI/UX Designer",

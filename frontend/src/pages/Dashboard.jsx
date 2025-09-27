@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Navbar from "../components/Navbar";
 import DashBoardCont from "../components/DashBoard/DashboardCont";
 import UploadCv from "./UploadCv";
+import SavedJob from "./SavedJob";
 
 const Dashboard = () => {
   const [isActive, setIsActive] = useState("Dashboard");
@@ -17,6 +18,7 @@ const Dashboard = () => {
       <Navbar isActive={isActive} setIsActive={setIsActive} button={button} />
       {isActive === "Dashboard" && <DashBoardCont />}
       {isActive === "Upload CV" && <UploadCv />}
+      {isActive === "Saved Job" && <SavedJob />}
     </div>
   );
 };
