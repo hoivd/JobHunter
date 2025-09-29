@@ -61,7 +61,7 @@ class ConversationalAgent:
             self.llm,
             agent="conversational-react-description",
             memory=self.memory,
-            verbose=False
+            verbose=True
         )
         
     def chat(self, user_input: str, top_k: int = 5) -> dict:

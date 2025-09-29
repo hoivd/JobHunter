@@ -19,11 +19,12 @@ class DetectInputTypeTool:
         Nhiệm vụ: xác định loại input mà người dùng nhập vào.
 
         Quy tắc:
-        - Nếu input nói về một công việc, dù ngắn gọn (VD: "AI Engineer") 
-        hay nằm trong một câu dài hơn (VD: "Tôi muốn tìm việc AI Engineer"), 
+        - Nếu input nói về một công việc, dù ngắn gọn (VD: "job_title") 
+        hay nằm trong một câu dài hơn (VD: "Tôi muốn tìm việc job_title"), 
         thì trả về 'job_title'.
-        - Nếu input liệt kê kỹ năng hoặc ám chỉ đến các kỹ năng (VD: "Python, Machine Learning, Docker") 
-        thì trả về 'skill_list'.
+        - Nếu input đề cập đến các kỹ (VD: "skill A, skill B, skill C") 
+        hay nằm trong một câu dài hơn (VD: Tôi có các kỹ năng A, B, C)
+        thì trả về 'skill_list' (A, B, C).
 
         Lưu ý:
         - Chỉ trả về đúng một trong hai từ: 'job_title' hoặc 'skill_list'.

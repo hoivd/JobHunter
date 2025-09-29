@@ -75,8 +75,8 @@ async def websocket_chat(websocket: WebSocket):
 async def startup_event():
     loop = asyncio.get_running_loop()
     
-    index_file = r"E:\Project\DSC2025\JobHunter\retrieval\jobs_index.faiss"
-    pkl_file   = r"E:\Project\DSC2025\JobHunter\retrieval\id2title.pkl"
+    index_file = "retrieval/jobs_index.faiss"
+    pkl_file   = "retrieval/id2title.pkl"
 
     # nếu 2 file đã tồn tại thì bỏ qua build
     if os.path.exists(index_file) and os.path.exists(pkl_file):
