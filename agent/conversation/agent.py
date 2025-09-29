@@ -23,6 +23,8 @@ class ConversationalAgent:
         
         self.memory = get_memory()
 
+        self.detect_tool = DetectInputTypeTool(self.llm)
+        
         # Tool dùng LLM để detect input
         self.detect_tool = DetectInputTypeTool(self.llm)
 

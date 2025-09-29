@@ -15,12 +15,23 @@ class DetectInputTypeTool:
 
     def detect(self, user_input: str) -> str:
         prompt = f"""
-        Bạn là một chuyên gia phân tích input tuyển dụng.
-        Xác định input dưới đây là:
-        - 'job_title' nếu input nhắm tới tên nghề/ngành công việc
-        - 'skill_list' nếu input liệt kê các kỹ năng
-        Chỉ trả về một từ 'job_title' hoặc 'skill_list'.
+        Bạn là chuyên gia phân loại input tuyển dụng.
+        Nhiệm vụ: xác định loại input mà người dùng nhập vào.
+
+        Quy tắc:
+        - Nếu input nói về một công việc, dù ngắn gọn (VD: "AI Engineer") 
+        hay nằm trong một câu dài hơn (VD: "Tôi muốn tìm việc AI Engineer"), 
+        thì trả về 'job_title'.
+        - Nếu input liệt kê kỹ năng hoặc ám chỉ đến các kỹ năng (VD: "Python, Machine Learning, Docker") 
+        thì trả về 'skill_list'.
+
+        Lưu ý:
+        - Chỉ trả về đúng một trong hai từ: 'job_title' hoặc 'skill_list'.
+        - Không thêm giải thích.
+
         Input: {user_input}
         """
         result = self.llm.predict(prompt)
         return result.strip().lower()
+
+

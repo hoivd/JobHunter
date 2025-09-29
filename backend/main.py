@@ -5,6 +5,7 @@ from pydantic import BaseModel
 import asyncio
 from concurrent.futures import ThreadPoolExecutor
 import subprocess
+import os
 
 # IMPORT AGENT CỦA BẠN -------------------------------------------------
 # đảm bảo python có thể import package 'agent' (chạy uvicorn từ thư mục gốc hoặc set PYTHONPATH)
@@ -73,7 +74,21 @@ async def websocket_chat(websocket: WebSocket):
 @app.on_event("startup")
 async def startup_event():
     loop = asyncio.get_running_loop()
-    # chạy build_index trong thread pool để không block event loop
+    
+    index_file = r"E:\Project\DSC2025\JobHunter\retrieval\jobs_index.faiss"
+    pkl_file   = r"E:\Project\DSC2025\JobHunter\retrieval\id2title.pkl"
+
+    # nếu 2 file đã tồn tại thì bỏ qua build
+    if os.path.exists(index_file) and os.path.exists(pkl_file):
+        print("✅ Index và PKL đã tồn tại, không cần build lại.")
+        return
+
     def run_index():
-        subprocess.run(["python", "-m", "retrieval.build_index"], check=True)
-    await loop.run_in_executor(executor, run_index)
+        print("🔨 Chạy build_index để tạo FAISS và PKL...")
+        subprocess.run(
+            ["python", "-m", "retrieval.build_index"],
+            check=True
+        )
+
+    # chạy trong thread pool để không block event loop
+    await loop.run_in_executor(None, run_index)
