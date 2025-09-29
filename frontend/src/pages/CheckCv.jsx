@@ -7,17 +7,15 @@ const CheckCv = () => {
   const [isPreviewCv, setIsPreviewCv] = useState(true);
   return (
     <div
-      className={`h-screen w-full ${
-        isPreviewCv ? "grid grid-cols-[65%_35%]" : "flex-1"
+      className={`h-screen bg-[#f3fdfe] ${
+        isPreviewCv ? "grid grid-cols-[50%_50%]" : "flex-1"
       }`}
     >
-      <div className="h-full w-full relative">
-        <GraphView />
-      </div>
       <div
-        className={`absolute w-[28%] h-[60%] ${
-          isPreviewCv ? "bottom-2 left-125" : "bottom-2 right-5"
-        }`}
+        // className={`absolute w-[28%] h-[60%] ${
+        //   isPreviewCv ? "bottom-2 left-125" : "bottom-2 right-5"
+        // }`}
+        className="h-screen"
       >
         <Chatbot />
       </div>

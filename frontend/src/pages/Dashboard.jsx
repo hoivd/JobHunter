@@ -3,10 +3,11 @@ import Navbar from "../components/Navbar";
 import DashBoardCont from "../components/DashBoard/DashboardCont";
 import UploadCv from "./UploadCv";
 import SavedJob from "./SavedJob";
+import CheckCv from "./CheckCv";
 
 const Dashboard = () => {
   const [isActive, setIsActive] = useState("Dashboard");
-  const button = ["Dashboard", "My Profile", "Saved Job", "Upload CV"];
+  const button = ["Dashboard", "Upload CV", "Check CV", "Saved Job"];
 
   return (
     <div
@@ -19,6 +20,7 @@ const Dashboard = () => {
       {isActive === "Dashboard" && <DashBoardCont />}
       {isActive === "Upload CV" && <UploadCv />}
       {isActive === "Saved Job" && <SavedJob />}
+      {isActive === "Check CV" && <CheckCv />}
     </div>
   );
 };
