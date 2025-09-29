@@ -1,0 +1,86 @@
+```python
+{
+  "id_img": "180PUpkEUNXRsouY3eVTBJggikJCaS7CT",
+  "content": """AI Engineer (Python,GenAI) - Up to 50M
+NTT DATA VDS
+Sign in to view salary
+
+ 98 Nguy Nhu Kon Tum, Thanh Xuan, Ha Noi  At office 8 days ago
+Skills:
+Job Expertise:
+Job Domain:
+Top 3 reasons to join us
+Bonus Bao Viet insurance
+OT compensation: up to 400%
+Free account Udemy
+Job description
+1. Technical development activities:
++ Technical analysis of business requirements to implement the application/system
++ Draft and update use cases, user stories when required
++ Setup development/integration environments (Infrastructure, CI/CD Pipeline, Monitoring),  implementation of CI/CD pipelines to automate the software delivery process and integrate tests into the CI/CD pipeline to ensure software quality
++ Design, build, review reliable BE and FE code for Generative AI application which will be deployed in Cloud based or on Premises.
++ Design, build, review reliable Data processing workflow code which will be deployed in Cloud based or on Premises.
++ Prepare unit test cases, E2E automation test and plans.
++ Analysis and resolution of incidents, provision of new (bug fix) releases for delivery and rollout of the software
++ Follow guidelines from Control, Quality and Procedures Section: JIRA workflow, DevOps and build strategies, software development standards and best practices, security instructions,…
++ Follow client Standards
++ Adhere to the acceptance criteria and the Definition of Done
++ Ensure documentation of software/changes is maintained and at quality in accordance with internal standards and industry best practices.
++ Perform maintenance and monitoring activities.
++ Compliance with commitments for scopes to be implemented and ensuring that the solution meets the customer’s requirements
+2. Teamwork and collaboration activities:
++ Active participation in all project-related meetings (e.g. Daily, Backlog Refinement)
++ Follow-up on activities related to software development and testing
++ Presentation of the results to the stakeholders as part of a system and/or sprint demo
++ Manage project team, perform work estimation, assign tasks, create project report, when required and with support
++ Remove impediments and obstacle in the project to facilitate team’s work with support.
++ Monitor and control performance of team and each individual (on assignment)
++ Verify and submit Timesheet of internal team (on assignment)
++ Follow process, regulations and procedures of the Company
++ Define, monitor, assess and report project’s Objectives (on assignment)
++ Report to higher manager the assigned tasks result and other performance result on request
+3. Training and coaching (when required):
++ Train/Coach other colleagues, new hired employee, when required
++ Continuous training on new technologies and trends in software development, cloud computing and full-stack development (framework, protocol, Cloud, DevOps, Gen AI…)
+Your skills and experience
+1.Technical skills/experiences:
++ At least 1+ years of experience working with software development or data engineering such as Python, Java, Scala, JavaScript…
++ Strong understanding of Python syntax and semantics, experience with Python 3.x.
++ Has experience in Python for BE and FE frameworks:Django, Streamlit or Flask and libraries: NumPy, Pandas, and Requests, FastApi, uvicorn, langgraph, langchain, kedro pipeline…
++ Experience with machine learning frameworks such as Scikit-learn, TensorFlow, or PyTorch.
++ Familiar with RAG (query rewrite, routing, reranking, conversation history, evaluation …), document indexing, chunking, prompting, vector database, semantic search, hybrid search, embedding models, LLM models, agentic workflow, agent framework (LangGraph)
++ Understanding of generative models such as GANs (Generative Adversarial Networks) and VAEs (Variational Autoencoders).
++ Experience with natural language processing (NLP) libraries like SpaCy or transformers from Hugging Face.
++ Has at least 1 year experience in Generative AI development based on Azure (Azure Bot Service and Bot Framework SDK, Azure AI services, Azure OpenAI Service, Azure Cognitive Services for AI, Document intelligence, Video indexer…) and/or AWS (AWS Machine Learning services such as Sage Maker, Comprehend;  AWS Lambda, Amazon Bedrock, Amazon Q Developer…) or similar.
++ At least 1+ years of experience working SQL, NoSQL and Cloud DB such as Postgres, MongoDB, S3, MS SQL, Oracle, vector database (embedded database): Azure AI Search, Cosmos DB), Amazon Neptune, Lance DB, OpenSearch Service, …
++ Has knowledge about DevOps practices and toolchains (Docker, Kubernetes, Azure DevOps for CI/CD pipelines or Jenkins, Gitlab CI, open telemetry, Azure log analytics, …)
+2.Soft skills/experiences:
++ At least 1.5 years of experience in Agile SCRUM, has understanding about Agile Manifesto and SCRUM events.
++ Able to communicate with client in English: self-introduction, interview, presentation, and discussion in SCRUM events
++ Has experience or willing to work with European client
+Why you'll love working here
+Salary: Up to 50M/month
+Salary package: 13 months of income per year 
+OT compensation: up to 400%
+Free account Udemy
+Bonus Bao Viet insurance when becoming an official employee
+Bonus on birthday, New Year’s Eve, 30/4&1/5, 2/9: 500.000VND
+Child benefit: 500.000 VND per month (from the age of 7 to 24 months old)
+Shopping or travel voucher 5.000.000VND for official employees who have been working for more than a year and obtain excellent performance review
+Annual teambuilding: summer trip, many indoor and outdoor activities such as yoga club, soccer club, swimming club,…
+Professional and dynamic working environment
+The employee who has foreign language ability will have opportunities to go onsite abroad 
+Full insurance package which is compliant with Labor law
+12 annual leaves per year
+
+NTT DATA VDS
+3.4
+Top IT company providing IT outsourcing services mainly for European
+Company typeCompany industryCompany size
+IT Outsourcing
+Software Development Outsourcing
+301-500
+CountryWorking daysOvertime policy
+ItalyMonday - FridayNo OT"""
+}
+```

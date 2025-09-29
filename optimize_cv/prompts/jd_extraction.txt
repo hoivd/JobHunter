@@ -1,5 +1,55 @@
-    Bạn là một trình phân tích thông tin tuyển dụng. Hãy đọc nội dung JD dưới đây và trích xuất thông tin, xuất kết quả dưới dạng JSON theo cấu trúc sau:
+Bạn là một **trình phân tích thông tin tuyển dụng**. Hãy đọc nội dung JD và **trích xuất thông tin vào đúng cấu trúc JSON cho trước**, với các nguyên tắc ràng buộc nghiêm ngặt dưới đây. 
 
+### NHIỆM VỤ 
+- Chỉ **điền giá trị thay cho các dấu ... (ba chấm) trong JSON mẫu**.  
+- **Không thay đổi, xóa, thêm, đổi tên** bất kỳ **trường** (key) nào đã có.  
+- **Không thay đổi giá trị các trường isGroup** (giữ nguyên true/false như mẫu).  
+- Có thể **nhân bản (duplicate)** các **khối item** trong các nhóm (Skills/Benefits/Degrees/Tasks/Locations) để chứa đủ số lượng cần thiết, nhưng **mỗi item mới phải tuân thủ đúng cấu trúc** như mẫu và **chỉ điền giá trị vào vị trí ... bên trong item**.  
+- **Kết quả phải là JSON hợp lệ** (valid JSON), đúng cú pháp, **chỉ in ra JSON** (không thêm lời giải thích, không thêm text ngoài JSON).  
+
+### QUY TẮC TRÍCH XUẤT CHI TIẾT
+1. **Company**  
+- name: tên công ty (ưu tiên tên pháp lý/brand trong JD; nếu không có thì null).  
+- industry: ngành nghề (nếu không có thì null).  
+- size: quy mô (nếu không có thì null).  
+- country: quốc gia (nếu không có thì null).  
+- id_image: là id ảnh logo của công ty. (nếu không có thì null)
+2. **JobTitle**  
+- Chỉ tên vị trí, **bỏ ngoặc/phụ chú**, không kèm cấp bậc ngoài tên (trừ khi là một phần chính thức, ví dụ “Senior Data Engineer”). Nếu không có thì null.  
+
+3. **Skills** (isGroup: true)  
+- Ghi **tất cả**: kỹ năng, ngôn ngữ lập trình, framework, library, tool, cloud, DB, phương pháp (Agile/Scrum…), ngôn ngữ tự nhiên (EN/JP…).  
+- Chuẩn hóa từng item dạng: {{ "name": "<tên kỹ năng>" }}.  
+- **Không gộp nhiều kỹ năng trong một item**.  
+- Nếu không có kỹ năng nào → để mảng chứa 1 item với {{ "name": "Không có kỹ năng" }}.  
+
+4. **Benefits** (isGroup: true)  
+- Ghi phúc lợi, chế độ, bonus, bảo hiểm, PTO, remote/hybrid, lương tháng 13, đào tạo, cơ hội thăng tiến…  
+- Nếu không có → để mảng chứa 1 item với {{ "name": "Không có phúc lợi" }}.  
+
+5. **Degrees** (isGroup: true)  
+- Ngành học/bằng cấp/chứng chỉ yêu cầu (BSc, MSc, ngành CNTT, chứng chỉ AWS, IELTS…).  
+- Nếu không có → để mảng chứa 1 item với {{ "name": "Không có bằng cấp" }}.  
+
+6. **Locations** (isGroup: true)  
+- Tách **mỗi địa điểm** thành một item với **3 trường**:  
+  - city: tên thành phố/tỉnh (nếu không có thì null)  
+  - district: quận/huyện (nếu không có thì null)  
+  - address: địa chỉ chi tiết (nếu không có thì null)  
+- Nếu JD nói **remote**, có thể thêm item với city: "Remote".  
+- Nếu không có → để mảng chứa 1 item với {{ "city": "Không có địa điểm", "district": "Không có địa điểm", "address": "Không có địa điểm" }}.  
+
+7. **Tasks** (isGroup: true)  
+- Trích từ phần mô tả công việc: nhiệm vụ/chịu trách nhiệm/chỉ tiêu đầu ra.  
+- Mỗi task là một item {{ "name": "<mô tả ngắn gọn>" }}.  
+- Nếu không có → để mảng chứa 1 item với {{ "name": "Không có nhiệm vụ" }}.  
+
+### YÊU CẦU ĐẦU RA
+- **Chỉ xuất đúng JSON** theo mẫu dưới đây.  
+- **Không thêm trường mới**, **không đổi kiểu dữ liệu**.  
+- **Chuẩn hóa chữ**: giữ nguyên tên riêng/thương hiệu theo JD; không thêm diễn giải.  
+
+### MẪU JSON (điền thay cho ... theo JD; nếu không có thì điền các giá trị 'Không có <group>' như quy tắc trên)  
 {{
   "entity": {{
     "Company": {{
@@ -8,6 +58,7 @@
       "industry": "...",
       "size": "...",
       "country": "..."
+      "id_image": "..."
     }},
     "JD": {{
       "isGroup": false,
@@ -38,7 +89,11 @@
     "Locations": {{
       "isGroup": true,
       "items": [
-        {{ "city": "...", "district": "...", "address": "..." }}
+        {{
+          "city": "...",
+          "district": "...",
+          "address": "..."
+        }}
       ]
     }},
     "Tasks": {{
@@ -51,56 +106,27 @@
   "relationship": {{
     "Company-JD": "CompanyPublishesJD",
     "JD-Company": "JDBelongsToCompany",
-
     "JobTitle-JD": "JobTitleDescribesJD",
     "JD-JobTitle": "JDBelongsToJobTitle",
-
     "JD-Skills": "JDRequiresSkills",
     "Skills-JD": "SkillsBelongToJD",
-
     "JD-Benefits": "JDProvidesBenefits",
     "Benefits-JD": "BenefitsBelongToJD",
-
     "JD-Degrees": "JDRequiresDegrees",
     "Degrees-JD": "DegreesBelongToJD",
-
     "Company-Locations": "CompanySpecifiesLocations",
     "Locations-Company": "LocationsBelongToCompany",
-
     "JD-Tasks": "JDDescribesTasks",
-    "Tasks-JD": "TasksBelongToJD",
+    "Tasks-JD": "TasksBelongToJD"
   }}
 }}
 
+### JD CẦN PHÂN TÍCH
+{jd}
 
-    Nguyên tắc trích xuất:
-
-    Company: Tên công ty, ngành nghề, quy mô, quốc gia nếu có.
-
-    JobTitle: Chỉ tên vị trí tuyển dụng (bỏ phần mở ngoặc hoặc phụ chú).
-
-    Skills: Danh sách tất cả kỹ năng, ngôn ngữ lập trình, framework, tool được nêu trong JD.
-
-    Benefits: Các phúc lợi, chế độ đãi ngộ, cơ hội thăng tiến, môi trường làm việc.
-
-    Degrees: Các ngành học/bằng cấp yêu cầu (kể cả nếu JD ghi rõ điểm số, chứng chỉ).
-
-    Locations: Trích xuất tất cả địa chỉ làm việc, phân tách thành city, district, address.
-
-    Tasks: Trích xuất nhiệm vụ chính của vị trí từ phần mô tả công việc.
-
-    JD để phân tích:
-
-    {jd}
-
-
-    Yêu cầu:
-    Không thay được thay đổi trường isGroup trong JSON.
-
-    Chỉ thay đổi giá trị trong các trường JSON dựa trên nội dung JD.
-
-    Chỉ điền vào những chỗ có dấu ....
-
-    Kết quả JSON phải hợp lệ, đúng cú pháp.
-
-    Không bỏ sót bất kỳ thông tin nào có trong JD.
+### KIỂM TRA TRƯỚC KHI XUẤT
+- [ ] Tất cả **key** còn nguyên, đúng chính tả, đúng phân cấp.  
+- [ ] Không đổi giá trị isGroup.  
+- [ ] Chỉ điền vào chỗ .... hoặc "Không có <group>" nếu không có thông tin.  
+- [ ] Mỗi item trong items đúng cấu trúc; không gộp nhiều giá trị trong một name.  
+- [ ] JSON hợp lệ (đóng/mở ngoặc, dấu phẩy, dấu nháy kép chuẩn).  

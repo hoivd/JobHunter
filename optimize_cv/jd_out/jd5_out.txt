@@ -1,0 +1,64 @@
+```python
+{
+  "id_img": "14GP2x7Q_gzbcT2ld9JIMtgm2wJUCcRo5",
+  "content": """Software Engineer (Java, Golang, NodeJS)
+CÔNG TY TNHH GIẢI PHÁP BRAIN TECH
+Sign in to view salary
+
+ Phường Đức Nhuận, Phu Nhuan, Ho Chi Minh  At office 5 days ago
+Skills:
+Job Expertise:
+Job Domain:
+Top 3 reasons to join us
+Phụ cấp ăn sáng, ăn trưa và tiền gửi xe.
+Được cung cấp trang thiết bị làm việc (LCD 24”,..)
+Môi trường, điều kiện làm việc chuyên nghiệp,...
+Job description
+Tham gia vào toàn bộ vòng đời phát triển phần mềm, từ việc phân tích yêu cầu, thiết kế kiến trúc, đến lập trình và triển khai các ứng dụng frontend, backend hiệu suất cao. Phối hợp phát triển giao diện người dùng (UI) trực quan và thân thiện sử dụng các framework như React hoặc Angular (tùy thuộc vào yêu cầu dự án).
+Xây dựng các hệ thống hiệu năng cao, có khả năng mở rộng (scalable) và xử lý khối lượng dữ liệu lớn.
+Thiết kế và làm việc với các hệ quản trị cơ sở dữ liệu quan hệ (Oracle, PostgreSQL, MySQL) và NoSQL (Cassandra, Redis, Elasticsearch).
+Viết code sạch, hiệu quả, dễ bảo trì và có tính tái sử dụng cao. Thực hiện unit test, integration test và tham gia vào quá trình review code của nhóm.
+Phân tích, tìm và sửa lỗi (troubleshooting), tối ưu hóa hiệu năng của ứng dụng và cơ sở dữ liệu để đảm bảo hệ thống hoạt động ổn định và nhanh chóng.
+Hợp tác chặt chẽ với các Product Owner, QA, DevOps và các Software Engineer khác để đưa ra các giải pháp kỹ thuật tốt nhất và đảm bảo sản phẩm được giao đúng tiến độ.
+Luôn cập nhật, nghiên cứu và áp dụng các công nghệ, kiến trúc và xu hướng mới (ví dụ: Serverless, Cloud-native,…) để cải tiến sản phẩm.
+Your skills and experience
+Yêu cầu bắt buộc:
+Tốt nghiệp đại học chuyên ngành Công nghệ thông tin, Khoa học máy tính hoặc các lĩnh vực liên quan.
+Tối thiểu 03 năm kinh nghiệm làm việc ở vị trí Software Engineer hoặc tương đương.
+Thành thạo ít nhất một trong các ngôn ngữ lập trình sau: Java (với Spring Boot), Go, hoặc Node.js (với Express.js/NestJS). Có kinh nghiệm với các ngôn ngữ còn lại là một lợi thế lớn.
+Hiểu biết sâu sắc về các nguyên lý Lập trình Hướng đối tượng (OOP), cấu trúc dữ liệu và giải thuật.
+Có kinh nghiệm làm việc với các hệ quản trị CSDL như Oracle, PostgreSQL, MySQL, Cassandra, Elasticsearch, Redis.
+Có kinh nghiệm thiết kế và xây dựng API RESTful. Kiến thức về gRPC là một điểm cộng.
+Có tư duy logic tốt, kỹ năng giải quyết vấn đề và khả năng làm việc nhóm hiệu quả.
+Tinh thần chủ động, ham học hỏi và có trách nhiệm cao trong công việc.
+Yêu cầu ưu tiên (Điểm cộng):
+Có kinh nghiệm làm việc với kiến trúc Microservices.
+Hiểu biết về các công cụ DevOps như Docker, Jenkins, Kubernetes và quy trình CI/CD.
+Có kinh nghiệm sử dụng các hệ thống message queue như Kafka, RabbitMQ.
+Đã từng làm việc trong môi trường phát triển theo phương pháp Agile/Scrum.
+Có tư duy sảnphẩm, khả năng nhìn nhận vấn đề từ góc độ người dùng.
+Khả năngđọchiểu tài liệu tiếng Anh tốt.
+Why you'll love working here
+Mức lương cạnh tranh, tương xứng với năng lực và kinh nghiệm. Được đánh giá lương tối thiểu 1 lần/năm.
+Được ghi nhận, thưởng theo năng lực và hiệu quả công việc hàng quý/năm và theo quy định của Công ty.
+Môi trường, điều kiện làm việc chuyên nghiệp, tiện nghi, hiện đại, rộng rãi, thân thiện với môi trường, chuẩn văn phòng hạng B+.
+Được cung cấp trang thiết bị làm việc (Macbook, LCD 24”, Laptop,...).
+Phụ cấp ăn sáng, ăn trưa và tiền gửi xe.
+Được hưởng đầy đủ các chế độ phúc lợi theo luật Lao động Việt Nam (BHXH, BHYT, BHTN).
+Thưởng Lễ, Tết, Sinh nhật, Kết hôn.
+Các hoạt động Team building theo Quý và du lịch hàng năm.
+Được đánh giá năng lực làm việc theo quý/năm và nâng cấp bậc trong công việc; làm việc, cộng tác cùng đội ngũ nhân sự chất lượng cao, chuyên gia theo mô hình quản trị dựa trên OKRS, SAFe; nhiều cơ hội phát triển năng lực, thăng tiến sự nghiệp dựa trên năng lực và giá trị của bản thân.
+Hỗ trợ chi phí đi công tác.
+Được xem xét tài trợ kinh phí các chương trình đào tạo, tham gia hội thảo trong nước và quốc tế giúp nâng cao năng lực, phục vụ công việc.
+ 
+
+CÔNG TY TNHH GIẢI PHÁP BRAIN TECH
+CÔNG TY TNHH GIẢI PHÁP BRAIN TECH
+Company typeCompany industryCompany size
+IT Product
+AI Software & Services
+1-50
+CountryWorking daysOvertime policy
+VietnamMonday - FridayNo OT"""
+}
+```

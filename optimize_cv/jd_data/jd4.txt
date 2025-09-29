@@ -1,0 +1,66 @@
+Link ảnh: ‘https://drive.google.com/file/d/1t4ST6jZRJ8dNA9JoC2Bg1pWwN_M0P6o6/view’
+Senior Software Engineer (Java,C#)
+Katalon
+Sign in to view salary
+
+ Viettel Building, 285 Cach Mang Thang Tam Street, Hoa Hung Ward, HCMC., District 10, Ho Chi Minh  Hybrid (flexible between home and office) 4 days ago
+Skills:
+Job Expertise:
+Job Domain:
+Top 3 reasons to join us
+Compelling Pay and Incentives
+Well-being & Work-life Balance
+Professional Development and Recognition
+Job description
+Founded in 2016, Katalon is the category leader in AI-augmented software testing, empowering hybrid testers—those blending manual, automation, and AI skills—to deliver exceptional digital experiences. Katalon enables software teams of any size to deliver world-class customer experiences faster, easier, and more efficiently.
+Since its first launch, Katalon has experienced tremendous growth, serving more than 30,000 teams across 80+ countries, many of which are in the Fortune Global 500. Katalon has been named a G2 Leader in software testing for 11 consecutive quarters and a Great Place to Work for three consecutive years.
+ 
+Your responsibilities will be as follows:
+Collaborate with the product manager and team to develop new features and enhancements for the product.
+Perform detailed technical analysis and design to break down features based on high-level design and business requirements.
+Write code that adheres to development standards for code style, design patterns, readability, maintainability, and scaling best practices.
+Work with peer Engineers to ensure system accountability for release product quality, security, and performance.
+Conduct code reviews to ensure consistent application of standards.
+Identify areas of improvement within the existing codebase and propose solutions.
+Contribute to internal engineering working groups to define and build internal libraries, tools, and frameworks for reusability and standardization.
+Possesses the ability to diagnose and troubleshoot issues to support customer requests.
+Assist in maintaining the demo system and writing scripts using new Katalon features for application testing, providing automation support to QAs and product specialists.
+Your skills and experience
+Must-have:
+Bachelor's degree in Computer Science, Engineering, or a related field;
+At least 6 years of experience in software development;
+Proficiency in OOP paradigm (preferably C-family languages like Java or C#) for designing, developing, and maintaining high-quality software applications;
+Expertise in building Web API back-end using web frameworks (Spring, Quarkus, ASP.NET Core), ORMs (Hibernate, Entity Framework), conventional J2EE specifications (CDI, JPA, JAX-RS)
+Familiarity with coding best practices (e.g., clean code, unit tests, design patterns);
+A willingness to research and gain knowledge of automation frameworks (Selenium, Appium, Cypress, Playwright);
+Strong grasp of Scrum and Agile methodologies.
+Demonstrate organizational, analytical, and problem-solving skills.
+Ability to mentor junior engineers and support team members.
+"Can-Do" attitude and high sense of ownership.
+Effective English communication skills.
+Nice-to-have:
+Background in desktop / CLI / mobile application development. If you have a hands-on experience with Eclipse RCP,  it's a big plus.
+Hands-on experience in Java core and client technologies such as (but not limited to) Swing/JavaFX, JDBC, RMI, Reactive Stream, Concurrency, Beans, Reflection, etc.
+SPA technology proficiency (Angular / Ember / React);
+Familiarity with cloud infrastructures like AWS, Azure, or Google Cloud Platform.
+Experience with event-driven design and message queue frameworks (RabbitMQ, Kafka, JMS, MSMQ, etc.).
+Why you'll love working here
+At Katalon, we bring together self-starting, open-minded, and talented people while actively promoting a transparent and growth-enabling working environment. But don’t just take our word for it. Take a better look below!
+Total Remuneration: Satisfying your financial goals through competitive compensation and periodic performance bonuses.
+Well-being & Work-life Balance: Staying healthy through comprehensive health plans and generous paid leaves.
+Statutory Compliance: Labor compliance with local regulations that ensure employee security.
+Work Facilities & Accommodation: Top-notch equipment, supportive allowances, and A-class facilities.
+Diversity, Equity, Engagement, & Inclusion: Becoming part of a global team that celebrates differences, equal opportunity, and meaningful employee recognition.
+Growth & Rewards: Thriving professionally through employee enablement, a culture of trust, and rewarding performance.
+Katalon is proud to be an equal-opportunity employer. We care about our people and celebrate our differences. We want to work with talented, collaborative, and innovative people. We do not discriminate in hiring or any employment decision based on race, color, religion, national origin, age, sex (including pregnancy, childbirth, or related medical conditions), marital status, ancestry, physical or mental disability, genetic information, veteran status, gender identity or expression, sexual orientation, or other characteristics protected by law.
+
+Katalon
+4.3
+A category leader in AI-augmented software testing
+Company typeCompany industryCompany size
+IT Product
+Software Products and Web Services
+301-500
+CountryWorking daysOvertime policy
+United StatesMonday - FridayNo OT
+

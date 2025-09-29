@@ -1,0 +1,56 @@
+Link ảnh: ‘https://drive.google.com/file/d/1t-QsyPoZb5h6jElYtPpPv7RRA9fljH9W/view’
+Junior AI Engineer
+Brighton Investment
+Sign in to view salary
+
+ Tầng 4, Tòa nhà Việt Tower, Số 1 Thái Hà, P. Trung Liệt, Dong Da, Ha Noi  Hybrid (flexible between home and office) 1 day ago
+Skills:
+Job Expertise:
+Job Domain:
+Top 3 reasons to join us
+Be part of a central technology team
+Personal career development
+Promotion opportunity to a Senior level
+Job description
+Researching, designing and deploying AI-assisted solution/systems based on business needs
+Researching and building modular AI agents for simple tasks with integrated workflow (e.g. n8n, Make, Zapier, etc.)
+Researching and experimenting with relevant AI frameworks and models (e.g. LLMs/SLMs, MCP, etc.)
+Supporting in standardizing data from internal & external sources
+Collaborating with other team members for relevant assigned task
+Your skills and experience
+Generic
+Critical thinking, problem-solving & Can-Do attitude
+Logical mindset and approach
+Fast-learner and willing to learn new technologies when required
+Can work both independently and in a team-work environment with strong communication skills
+Graduated in IT or a related technical majors/field (non-IT background will be accepted only with proven IT & domain-specific knowledge, skills and experience, on a case-by-case basis)
+English is not required but should be able to understand technical documents without any difficulty (i.e. no Google translation)
+Must have
+Ability to use Python, Linux at working level
+API development skills
+Knowledge of data structure and algorithm with mathematical mindset
+Hands-on experience with at least 1 workflow engine & automation platform, such as Power Automate, n8n, Airflow, Make or Zapier, etc.
+Actual personal portfolio on AI-related projects/solution (will be required to show)
+Experience with open-source solutions (i.e. self-deploy and host, etc.
+Nice to have
+Knowledge and/or experience with Machine Learning (ML)
+Data visualization experience with tools (e.g. Superset, Power BI, etc.)
+Why you'll love working here
+Young, dynamic and collaborative environment with flat structure, promoting creativity 
+Competitive salary, 100% salary during 2-month probation.
+Social, Heath and Unemployment Insurance starting right form probationary period.
+Premium Health Care.
+Employee discount program.
+Continuous learning spirit.
+Ongoing opportunities for professional development and growth. 
+ 
+
+Brighton Investment
+...
+Company typeCompany industryCompany size
+IT Service and IT Consulting
+IT Services and IT Consulting
+51-150
+CountryWorking daysOvertime policy
+VietnamMonday - FridayNo OT
+

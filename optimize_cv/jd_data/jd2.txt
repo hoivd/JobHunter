@@ -1,0 +1,71 @@
+Link ảnh: ‘https://drive.google.com/file/d/19eX9P3wb87Dwah3LJ9sG2Fl3pfKxO5VZ/view’
+Principal Software Engineer (.NET, C#)
+Pixelz
+Sign in to view salary
+
+ 107 Nguyen Phong Sac, Dich Vong Hau, Cau Giay, Ha Noi  At office 3 days ago
+Skills:
+Job Expertise:
+Job Domain:
+Top 3 reasons to join us
+International Environment (Europe, US colleague)
+Work-Life Balance & Flexibility
+Strong Engineering Culture & Growth Opportunities
+Job description
+THE ROLE
+As a Principal Software Engineer, you will play a pivotal role in designing, developing, and optimizing high-performance software systems. You will act as a technical leader, driving innovation, mentoring engineers, and ensuring that our technology stack meets the highest standards of scalability, security, and performance.
+
+This role requires a deep understanding of software architecture, cloud computing, and modern engineering best practices. You will collaborate with cross-functional teams, provide guidance on system design, and contribute to long-term technical strategy.
+
+Tech stack we are using: SQL Server, Entity Framework, .NET Core, Identity Server, RESTful APIs, Docker GraphQL, Amazon AWS (EC2, S3, SQS, SES, Lambda, ECS, EKS, API Gateway, etc), Elasticsearch, NodeJS, React.js, Redux, Web socket…
+JOB RESPONSIBILITIES
+Serve as a technical authority for complex projects and large-scale systems.
+Lead software architecture decisions to ensure scalability, performance, and security.
+Develop and implement best coding practices, ensuring high-quality software delivery.
+Mentor and coach mid-level and senior engineers, fostering technical growth.
+Drive innovation and continuous improvement, staying ahead of emerging technologies.
+Collaborate with product managers, designers, and other engineers to deliver business-critical solutions.
+Ensure smooth integration of cloud services, DevOps, and CI/CD pipelines.
+ 
+
+ 
+Your skills and experience
+JOB REQUIREMENTS
+Bachelor's degree in computer science or equivalent
+8+ years in software development, with at least 3+ years in a leadership role
+Strong expertise in .NET and C#
+Good communication in English
+Understanding of monolithic vs. microservices trade-offs
+Expertise in unit testing, integration testing, and test automation.
+Proficiency in RESTful APIs, GraphQL, gRPC
+Hands-on experience with AWS, Azure, or Google Cloud (GCP)
+Have experience with one of SQL databases: SQL Server, Oracle, Postgresql or MySQL
+Experience with profiling tools, database optimization, and caching strategies is a plus
+Experience in microservices architecture, event-driven systems, and distributed computing is a plus
+Familiarity with Docker, Terraform/CDK, CI/CD pipelines and infrastructure as code (IaC) is a plus.
+Understanding of OWASP Top 10, authentication protocols (OAuth, JWT, SAML) is a plus
+Experience with compliance standards like GDPR, HIPAA, SOC2 is a plus
+Why you'll love working here
+International working environment
+Flat and transparent organization
+Individual ideas are highly appreciated.
+Working with a strong technical team of young and ambitious members
+Flexible working time and result oriented
+Partial remotely (1-2 days/week work from home)
+Tech summit at a 5* resort annually.
+Chances to learn new business
+Great opportunities in developing career paths, English and soft skills.
+Social, healthcare and unemployment insurances complied with the labor law
+Up to 15 annual leave days per year
+Summer trip allowance, 2 week fully paid off for parental leave, teamwork activities and more to come once you join
+
+Pixelz
+4.2
+Leading product image editing service for internet retailers, designers, photographers, webmasters.
+Company typeCompany industryCompany size
+IT Product
+Creative and Design
+301-500
+CountryWorking daysOvertime policy
+DenmarkMonday - FridayExtra salary for OT
+

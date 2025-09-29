@@ -1,0 +1,61 @@
+Link ảnh: ‘https://drive.google.com/file/d/1muiJiYsGeuVL_All4iA31ZGYv_zWfCRO/view’
+AI/Machine Learning Engineer (Python)
+Persol Career Tech Studio Vietnam
+Sign in to view salary
+
+ 6th Floor An Phu Plaza, Vo Thi Sau Ward, District 3, District 3, Ho Chi Minh  Hybrid (flexible between home and office) 1 day ago
+Skills:
+Job Expertise:
+Job Domain:
+Top 3 reasons to join us
+Hybrid Working style and Flexible working time
+Competitive salary, bonus, expenses and allowances
+15 days of paid leave + Health Care Insurance
+Job description
+Algorithm Development - Design, build, and optimize machine learning algorithms and models for various HR-related applications, such as candidate screening, talent matching, performance prediction, and sentiment analysis.
+Cloud Infrastructure - Architect, develop, and deploy AI-related cloud infrastructure and services on platforms like AWS, Azure, or Google Cloud Platform. This includes setting up and managing data pipelines, model serving endpoints, and scalable computing resources.
+Full Lifecycle Development - Take ownership of the entire machine learning lifecycle, from initial data exploration and feature engineering to model training, evaluation, and deployment in a production environment.
+Collaboration - Work closely with product managers, data scientists, and other software engineers to understand business requirements, translate them into technical specifications, and deliver high-quality, impactful solutions.
+Performance & Optimization - Monitor the performance of deployed models, troubleshoot issues, and continuously improve algorithms to enhance accuracy and efficiency.
+Research & Innovation - Stay up-to-date with the latest advancements in AI, machine learning, and cloud technologies. Propose and experiment with new tools and techniques to keep our products at the forefront of the industry.
+Code Quality - Write clean, well-documented, and maintainable code, adhering to best practices in software development.
+Your skills and experience
+Must: 
+2+ years of professional hands-on experience as an AI Developer, Machine Learning Engineer, or similar role.
+Hands-on experience with cloud platforms (AWS, or GCP) and related services (e.g., S3, EC2, Lambda, SageMaker, Google AI Platform).
+Solid understanding of machine learning principles, including supervised, unsupervised, and reinforcement learning.
+Strong programming skills in implementing programs using Python.
+Development experience with database technologies (SQL and NoSQL) and relational databases
+Preferable:
+Development experience using git, Jupyter notebook, and cloud
+Experience with containerization technologies (e.g., Docker, Kubernetes).
+Experienced growth in business using data AI
+Experience with project leads with multiple members
+Why you'll love working here
+Annual Leave: 15 days/ year
+Flexible Working Time (Hybrid Working & Flexible Check-in) 
+100% Salary in Probation
+Salary Review (Twice a Year) 
+13th Salary bonus
+Social Insurance for 100% Salary
+Travel Allowance
+Premium Health Care Insurance for employees (PTI)
+Annual Health Check 
+Full Device Provide: MAC equipment, Monitors,..
+Monthly Happy , Quarterly Team Bonding Party, Company Trip, Year End Party and Events
+Training Program to encouraging people development (Udemy accounts, Training Course,..)
+Marriage / Baby Gift/ Holiday espense
+Funeral Expenses
+Referral Bonus
+Skill Improvement Course for Employees (Udemy)
+
+Persol Career Tech Studio Vietnam
+4.4
+GIVE PEOPLE THE POWER TO OWN THEIR WORK- LIFE
+Company typeCompany industryCompany size
+IT Product
+Software Products and Web Services
+51-150
+CountryWorking daysOvertime policy
+JapanMonday - FridayNo OT
+

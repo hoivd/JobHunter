@@ -1,0 +1,70 @@
+```python
+{
+  "id_img": "1tu_OnkXUFe-o0AmX0Wq5ZIuCtAsWn_0k",
+  "content": """IT Business Analyst (IT BA)
+PAL TECH
+Sign in to view salary
+
+ 20 Sông Thao, Tan Binh, Ho Chi Minh  At office 3 days ago
+Skills:
+Job Expertise:
+Job Domain:
+Top 3 reasons to join us
+Very attractive salary package & performance bonus
+20 days annual leaves
+Full legal package and 100% salary on probation
+Job description
+Position Summary:
+This role is in charge of developing requirements to meet business needs. Defines and publishes internal and external specifications, as well as assists in eliciting and clarifying requirements. Acting as a link between internal stakeholders and Business to analyse, document, communicate, and validate the application according to system requirements.
+ 
+Responsibilities:
+Obtain high-level functional requirements from internal stakeholders or customers.
+Actively communicate with stakeholders to clarify any requirements.
+Analyse and assess business needs, then create specification documents that include mock-ups, workflow, and detailed rules.
+Attend a meeting with business users, if necessary, to gather requirements or to present/demonstrate a feature.
+Provide the development and quality teams with the business requirements and specifications.
+Collaborate with team leaders and application teams to ensure that test requirements are met.
+Collaborate closely with diverse teams to ensure that testing and requirement analysis are completed on time.
+Create a variety of software/system documentation, such as Functional Specifications or User Guides.
+Support to consolidate reports or any required documents.
+Assist with software testing and quality assurance as needed.
+Your skills and experience
+Skills & Qualifications: 
+Degree in IT/Computer Science/Computer Engineering or related discipline.
+At least 2 years of experience as a Business Analyst (handling business requirements directly from Business users).
+Experience in software development of web-based/mobile applications is required.
+Proficient in English skills, both oral and written.
+Experience in the QC/testing field is desirable.
+Strong interpersonal and communication skills, both oral and written.
+Able to work in a dynamic and ever-changing industry.
+A self-initiated and proactive team player who can work with minimal supervision.
+Possess excellent time and task management skills.
+Why you'll love working here
+Benefits:
+Attractive compensation, regular assessments, and salary reviews;
+13th-month salary and annual bonus;
+20 days annual leave;
+100% salary during the probation period;
+100% social insurance, premium healthcare insurance, and annual routine check-up;
+Unlimited access to a selection of food and beverages;
+Special celebrations on 8/3, Father's day, 20/10, Christmas, Tet holiday, etc.;
+Company activities: annual teambuilding, new year party, quarterly company party, weekly fruits day, monthly birthday, etc.;
+Sports activities: badminton, football, etc.;
+Cinema days with blockbuster movies.
+
+Projects & Team:
+International working environment with a young, friendly, dynamic team, and creative;
+Flat organizational structure;
+Company sponsors overseas in-class training and online training courses.
+
+PAL TECH
+4.0
+IT company providing and developing software platforms
+Company typeCompany industryCompany size
+IT Product
+Software Products and Web Services
+51-150
+CountryWorking daysOvertime policy
+SingaporeMonday - FridayNo OT"""
+}
+```

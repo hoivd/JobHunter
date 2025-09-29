@@ -1,0 +1,53 @@
+```python
+{
+  "id_img": "1pjieMNRH8mP2uQdX4TaJF3FmjUeG3mMN",
+  "content": """Senior Backend Engineer_Java/English
+TPIsoftware Co., Ltd
+Sign in to view salary
+
+ Lim Tower, 29A Nguyễn Đình Chiểu, Đa Kao, District 1, Ho Chi Minh  Lầu 7, Phòng 706 - 707 - 708 Tòa nhà Văn phòng Hoàng Anh Safomec, số 7/1 Thành Thái, Phường 14, Quận 10, Thành phố Hồ Chí Minh, Việt Nam, District 10, Ho Chi Minh  At office 1 day ago
+Skills:
+Job Expertise:
+Job Domain:
+Top 3 reasons to join us
+Professional and international working environment
+Golden career path
+Attractive salary
+Job description
+1. Participate in the design and development of high-quality, scalable, and maintainable systems to support business objectives.
+2. Conduct system analysis, contribute to architecture design, and implement technical solutions based on project requirements.
+3. Develop and maintain software applications using Java technologies, ensuring best practices in clean code and design patterns.
+4. Collaborate closely with engineering teams across multiple platforms to deliver integrated solutions.
+5. Produce clear and comprehensive technical documentation for the systems developed.
+6. Apply and maintain engineering best practices related to code quality, system architecture, and delivery efficiency.
+7. Share knowledge and best practices within the team, proactively supporting team growth and technical excellence.
+Your skills and experience
+1. Strong experience with Java and J2EE technologies.
+2. Hands-on experience with RDBMS such as PostgreSQL, Oracle, or MS SQL Server.
+3. Experience in developing and deploying applications on Cloud platforms (GCP, AWS, or Azure).
+4. Familiar with version control and containerization tools such as Git, Docker, and Kubernetes (optional but preferred).
+5. Solid analytical and problem-solving skills.
+6. Good teamwork spirit and the ability to collaborate effectively in an Agile/Scrum environment.
+7. Good communication skills, logical thinking, and the ability to explain complex ideas clearly.
+8. Proactive and self-driven with a continuous learning mindset.
+9. Communicative English skills are required; willingness to learn Chinese or Vietnamese for cross-regional collaboration is a plus.
+Why you'll love working here
+THE BENEFITS 
+13-month salary and performance bonus
+Full social benefits in accordance with the company and the Vietnam Law
+Premium health care & accident insurance
+Friendly working environment with strong startup culture 
+Team building, Company trip, Year-end party, etc.
+40 flexible working hours per week from Monday to Friday 
+Salary review at least one time per year based on employee's performance and contribution
+
+TPIsoftware Co., Ltd
+Expedite Digital Transformation with State-of-the-Art AI Technology
+Company typeCompany industryCompany size
+IT Product
+Software Products and Web Services
+1-50
+CountryWorking daysOvertime policy
+TaiwanMonday - FridayNo OT"""
+}
+```

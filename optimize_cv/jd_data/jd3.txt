@@ -1,0 +1,65 @@
+Link ảnh: ‘https://drive.google.com/file/d/19eX9P3wb87Dwah3LJ9sG2Fl3pfKxO5VZ/view’
+Senior Software Engineer (.NET) - 1 month Signing bonus
+Pixelz
+Sign in to view salary
+
+ 107 Nguyen Phong Sac, Dich Vong Hau, Cau Giay, Ha Noi  At office 3 days ago
+Skills:
+Job Expertise:
+Job Domain:
+Top 3 reasons to join us
+International Environment (Europe, US colleague)
+Work-Life Balance & Flexibility
+Strong Engineering Culture & Growth Opportunities
+Job description
+The Role
+We are seeking a highly skilled Senior Software Engineer with expertise in C# and .NET to join our dynamic development team. In this role, you will design, develop, and maintain high-performance applications, ensuring scalability, security, and efficiency. You will work closely with cross-functional teams, mentor junior developers, and contribute to architectural decisions that shape our products.
+If you have a passion for building robust, enterprise-grade applications using modern .NET technologies, this role is perfect for you!
+Tech stack we are using: SQL Server, Entity Framework, .NET Core, Identity Server, RESTful APIs, Docker GraphQL, Amazon AWS (EC2, S3, SQS, SES, Lambda, ECS, EKS, API Gateway, etc), Elasticsearch, NodeJS, React.js, Redux, Web socket…
+Responsibilities
+Design, develop, and maintain scalable, high-performance applications using C# and .NET (ASP.NET Core, .NET 6/7+).
+Implement RESTful APIs, microservices, and web applications using best practices.
+Collaborate with product managers, designers, and other engineers to deliver high-impact solutions
+Optimize database interactions using SQL Server, Entity Framework, and other ORM tools.
+Enhance performance, scalability, and security of applications through optimization and best coding practices.
+Write clean, maintainable, and testable code while following SOLID principles and design patterns.
+Lead technical discussions, make architectural decisions, and provide mentorship to junior engineers.
+Integrate third-party services, APIs, and cloud solutions (AWS, Azure, or GCP).
+Work with DevOps teams to automate CI/CD pipelines and ensure smooth deployments.
+Troubleshoot, debug, and resolve production issues, ensuring high system availability.
+Stay updated with .NET ecosystem advancements and contribute to technology decisions.
+Your skills and experience
+5+ years of experience in software development with C# and .NET technologies.
+Expertise in ASP.NET Core, .NET 6/7+, Web API, and Microservices architecture.
+Strong experience with SQL Server, Entity Framework (EF Core), and LINQ.
+Proficiency in front-end technologies (HTML, CSS, JavaScript, and frameworks like Blazor, React, or Angular).
+Knowledge of asynchronous programming, multithreading, and parallel processing in .NET.
+Experience with authentication & authorization frameworks like JWT, OAuth2, and OpenID Connect.
+Experience with Cloud platforms (Azure, AWS, or GCP) and containerization (Docker, Kubernetes) is a plus.
+Strong knowledge of software architecture, design patterns, and SOLID principles.
+Familiarity with unit testing frameworks (xUnit, NUnit, Moq) and Test-Driven Development (TDD).
+Experience working with CI/CD pipelines, Git, and DevOps tools.
+Excellent problem-solving skills and a proactive attitude toward technical challenges.
+Strong communication and collaboration skills, with a track record of mentoring junior developers.
+Good communication in English
+Why you'll love working here
+International, dynamic and friendly working environment
+Working close with Product team in Denmark and Spain
+Great opportunities in developing career pathway, English and soft skills
+Flexible working time, from Monday to Friday.
+Work-from-home policy.
+Improve English competency by working directly with foreign colleagues.
+Social, healthcare and unemployment insurances complied with labor law.
+Up to 18 annual leave days per year
+Summer trip allowance, 4 day summit trip, 2 week fully paid off for parental leave, teamwork activities and uniform are provided.
+
+Pixelz
+4.2
+Leading product image editing service for internet retailers, designers, photographers, webmasters.
+Company typeCompany industryCompany size
+IT Product
+Creative and Design
+301-500
+CountryWorking daysOvertime policy
+DenmarkMonday - FridayExtra salary for OT
+

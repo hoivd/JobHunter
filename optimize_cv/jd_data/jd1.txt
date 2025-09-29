@@ -1,0 +1,60 @@
+Link ảnh: ‘https://drive.google.com/file/d/1eXp7UbU44Ikj_vWlXZWAd7iy4gZnca7K/view’
+Principal Software Architect - Fintech
+Trusting Social
+Sign in to view salary
+
+ Havana Tower - 132 Ham Nghi, District 1, Ho Chi Minh  At office 1 day ago
+Skills:
+Job Expertise:
+Job Domain:
+Top 3 reasons to join us
+Top Salary, Awesome Benefits
+Premium healthcare for 3 members in family
+Grab to work, Lunch allowance for all employee
+Job description
+Trusting Social is an AI Fintech pioneer that's revolutionizing credit access in emerging markets. Our mission is "Advancing AI to Meet the Financial Needs of Everyday Consumers with Empathy." We've assessed over 1 billion consumers across four countries, and we're on a mission to provide 100 million credit lines using the power of AI and Big Data.
+What You'll Do
+Building low latency APIs required by realtime AI Agents
+Design frameworks, and platforms for other engineers to use.
+Define structure and best practices for teams.
+Writing and optimizing database calls to provide the lowest latency to realtime voice agents.
+Designing and building lock free algorithms that manage orchestration of control flow and AI invocation in high throughput environments.
+Manage systems that connect, route and manage phone calls using Websockets, UDP, WebRTC. Optimize call quality and jitter across systems.
+Design and scale platforms high performance CRMs for specific domains.
+Your skills and experience
+Bachelor's degree in Computer Science, Engineering, or a related field, or equivalent experience.
+10 - 15 years of professional experience in software development, with a proven track record of building and maintaining low latency applications.
+Relevant and recent hands-on programming experience.
+Experience in writing detailed technical specification and documentation. 
+Strong product development experience.
+Experience in architecting and actively maintaining large scale systems
+Experience in defining product/technical specifications from business requirements when required.
+Strong proficiency in either Python, Golang or Node.js and their associated ecosystem.
+Strong Proficiency in SQL and experience with relational databases (e.g., PostgreSQL) and NoSQL databases (e.g., Redis).
+Experience with testing, CI/CD, containerization (Docker) and container orchestration (e.g., Kubernetes)
+Experience with version control systems (e.g., Git).
+Excellent problem-solving, analytical, and communication skills.
+Experience in leading and mentoring others.
+Why you'll love working here
+Competitive compensation package, including 13th-month salary and performance bonuses
+Comprehensive health care coverage for you and your dependents
+Generous leave policies, including annual leave, sick leave, and flexible work hours
+Convenient central district 1 office location, next to a future metro station
+Onsite lunch with multiple options, including vegetarian
+Grab for work allowance and fully equipped workstations
+Fun and engaging team building activities, sponsored sports clubs, and happy hour every Thursday
+Unlimited free coffee, tea, snacks, and fruit to keep you energized
+An opportunity to make a social impact by helping to democratize credit access in emerging markets
+At Trusting Social, we live by ownership, integrity, and agility in execution. We believe in doing what's right, what's best, and what's innovative. If you're smart, driven, and want to make a difference in the world with the most advanced and fascinating technology, come join our team. We offer the runway to truly make an impact.
+For more information about us, please visit our website:
+
+Trusting Social
+4.2
+Making Financial Inclusion a Reality using Machine Learning and AI
+Company typeCompany industryCompany size
+IT Service and IT Consulting
+Financial Services
+301-500
+CountryWorking days
+SingaporeMonday - Friday
+

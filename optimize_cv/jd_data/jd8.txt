@@ -1,0 +1,85 @@
+{
+  "id_img": "example_id",
+  "content": """Your JD content here"""
+}Link ảnh: ‘https://drive.google.com/file/d/1lIpHNyjkopqrVtsQWo0P_LVcd-UkbX3t/view’
+Principal AI/LLM Solution Engineer
+MONEY FORWARD VIETNAM CO.,LTD
+Sign in to view salary
+
+ ETown Central Building, 11 Doan Van Bo, Ward 13, District 4, Ho Chi Minh  Hybrid (flexible between home and office) 1 day ago
+Skills:
+Job Expertise:
+Job Domain:
+Top 3 reasons to join us
+Hybrid working; Flexible time; Macbook Pro
+L&D programs; 17 days off
+13.7 million B2C users; 140,000+ business customer
+Job description
+Job Description
+We are looking for an AI Solution Engineer with a strong foundation in large language models (LLMs), prompt design, and system integration — someone who can go beyond prompt tuning to design, build, and operate practical AI Agent systems that enhance and automate back-office workflows. Candidates for this position are expected to join the development team, understand the product and continuously research, and recommend AI features to realize AI product vision.
+Design and develop AI or AI Agent engines to integrate sophisticated features into a workflow application SaaS for automating and enhancing back-office operations using LLMs.
+Develop and iterate on high-quality prompts, prompt-chaining strategies, and evaluation pipelines.
+Monitor agent behavior and system metrics to identify and mitigate hallucinations, performance degradation, or edge cases.
+Evangelize and integrate tools, workflows, and development cultures to support rapid and responsible AI feature development.
+Collaborate with backend, frontend, and infrastructure teams for seamless integration and delivery.
+Share best practices with team members for prompt engineering, LLM integration, cloud AI tools utilization, and evaluation methodologies.
+Take technical ownership of AI initiatives, leading cross-functional collaboration (BE/FE/AI/SRE), and driving system-level decisions
+Your skills and experience
+Requirements
+Technical
+Must have
+5+ years of experience with Python (or Golang as an alternative).
+5+ years of Web application development.
+Practical experience designing and optimizing prompts for LLMs in production environments.
+Good understandings of:
+Backend development (e.g., web frameworks, databases).
+Cloud infrastructure (e.g., Azure, AWS, Terraform, serverless architecture).
+MLOps pipeline.
+Experience in:
+Architectural design for multi-agent orchestration.
+LLM orchestration frameworks like AutoGen, LangChain, and LlamaIndex.
+RAG architecture and vector stores.
+Integrating AI services from platforms like Azure AI Foundry, AWS Bedrock, or GCP Vertex AI.
+Nice to Have
+Basic understanding of frontend development (e.g., TypeScript/React).
+Familiarity with fine-tuning or instruction-tuning LLM models.
+Understanding of AI system deployment from a security/compliance standpoint.
+Exposure to IaC and CI/CD in production systems.
+Experience in B2B application development.
+Experience introducing traditional machine learning techniques and related ML pipelines to improve businesses.
+Communication
+Strong English communication, both verbal and written.
+Experience in leading a project as a team leader.
+Experience in educating team members.
+Strong sense of ownership.
+Why you'll love working here
+Caring Mental & Physical Recreation: 
+Hybrid working
+Full salary in probation & 13th month salary
+Social insurance on full salary from probation
+Premium Health insurance from probation
+Flexible start 8AM-9AM from Mon-Fri
+16 days off annually + 1 Birthday Leave 
+Paternity leave extra 5 days 
+Annual company trip; Quarterly team building activities
+Club activities
+Annual health check
+Caring Career & Development: 
+Clear Career path
+Foreign language & International technology-related certifications sponsoring
+Well-equipped facility: Macbook pro,  additional monitor,..
+Soft skill workshops
+Tech seminars
+Monthly and biannually Recognition Awards
+Performance review twice/year
+
+MONEY FORWARD VIETNAM CO.,LTD
+4.4
+Top 1 Fintech Company
+Company typeCompany industryCompany size
+IT Product
+Financial Services
+301-500
+CountryWorking daysOvertime policy
+JapanMonday - FridayNo OT
+
