@@ -1,0 +1,87 @@
+Bạn là một trình phân tích CV ứng viên.  
+Hãy đọc nội dung CV trong file PDF tôi cung cấp và trích xuất thông tin, xuất kết quả dưới dạng JSON theo cấu trúc sau:
+
+{
+  "entity": {
+    "Candidate": {
+      "isGroup": false,
+      "name": "...",
+      "email": "...",
+      "phone": "...",
+      "linkedin": "...",
+      "github": "...",
+      "portfolio": "..."
+    },
+    "Experiences": {
+      "isGroup": true,
+      "items": [
+        { "company": "...", "title": "...", "start_date": "...", "end_date": "..." }
+      ]
+    },
+    "Educations": {
+      "isGroup": true,
+      "items": [
+        { "degree": "...", "major": "...", "school": "...", "start_date": "...", "end_date": "..." }
+      ]
+    },
+    "Skills": {
+      "isGroup": true,
+      "items": [
+        { "name": "..." }
+      ]
+    },
+    "Certificates": {
+      "isGroup": true,
+      "items": [
+        { "name": "...", "issuer": "...", "date": "..." }
+      ]
+    },
+    "Languages": {
+      "isGroup": true,
+      "items": [
+        { "name": "...", "level": "..." }
+      ]
+    },
+    "Projects": {
+      "isGroup": true,
+      "items": [
+        { "name": "...", "description": "..." }
+      ]
+    }
+  },
+  "relationship": {
+    "Candidate-Experiences": "CandidateHasExperiences",
+    "Experiences-Candidate": "ExperiencesBelongToCandidate",
+
+    "Candidate-Educations": "CandidateHasEducations",
+    "Educations-Candidate": "EducationsBelongToCandidate",
+
+    "Candidate-Skills": "CandidateHasSkills",
+    "Skills-Candidate": "SkillsBelongToCandidate",
+
+    "Candidate-Certificates": "CandidateHasCertificates",
+    "Certificates-Candidate": "CertificatesBelongToCandidate",
+
+    "Candidate-Languages": "CandidateHasLanguages",
+    "Languages-Candidate": "LanguagesBelongToCandidate",
+
+    "Candidate-Projects": "CandidateHasProjects",
+    "Projects-Candidate": "ProjectsBelongToCandidate"
+  }
+}
+
+Nguyên tắc trích xuất:
+- Candidate: Họ tên, email, số điện thoại, LinkedIn, GitHub, portfolio nếu có.
+- Experiences: Công ty, vị trí, thời gian làm việc, nhiệm vụ chính.
+- Educations: Bằng cấp, ngành học, trường, thời gian học.
+- Skills: Tất cả kỹ năng, ngôn ngữ lập trình, framework, công cụ.
+- Certificates: Các chứng chỉ, bằng cấp bổ sung, người cấp, thời gian cấp.
+- Languages: Các ngôn ngữ ứng viên biết và trình độ.
+- Projects: Các dự án cá nhân hoặc tham gia, mô tả ngắn, công nghệ sử dụng.
+
+Yêu cầu:
+- Phân tích trực tiếp từ nội dung PDF đã upload.
+- Chỉ thay đổi giá trị trong các trường JSON dựa trên nội dung CV.
+- Chỉ điền vào những chỗ có dấu ....
+- Kết quả JSON phải hợp lệ, đúng cú pháp.
+- Không bỏ sót bất kỳ thông tin nào có trong CV.
