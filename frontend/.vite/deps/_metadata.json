@@ -1,0 +1,73 @@
+{
+  "hash": "4286f2f4",
+  "configHash": "2097ffa5",
+  "lockfileHash": "97396d7d",
+  "browserHash": "984828fb",
+  "optimized": {
+    "react": {
+      "src": "../../node_modules/react/index.js",
+      "file": "react.js",
+      "fileHash": "ec0ed22e",
+      "needsInterop": true
+    },
+    "react-dom/client": {
+      "src": "../../node_modules/react-dom/client.js",
+      "file": "react-dom_client.js",
+      "fileHash": "075b1d41",
+      "needsInterop": true
+    },
+    "react-router-dom": {
+      "src": "../../node_modules/react-router-dom/dist/index.mjs",
+      "file": "react-router-dom.js",
+      "fileHash": "99ef899b",
+      "needsInterop": false
+    },
+    "firebase/app": {
+      "src": "../../node_modules/firebase/app/dist/esm/index.esm.js",
+      "file": "firebase_app.js",
+      "fileHash": "a411b9ab",
+      "needsInterop": false
+    },
+    "@firebase/auth": {
+      "src": "../../node_modules/@firebase/auth/dist/esm/index.js",
+      "file": "@firebase_auth.js",
+      "fileHash": "71efbd2a",
+      "needsInterop": false
+    },
+    "react-force-graph-2d": {
+      "src": "../../node_modules/react-force-graph-2d/dist/react-force-graph-2d.mjs",
+      "file": "react-force-graph-2d.js",
+      "fileHash": "0f764cb4",
+      "needsInterop": false
+    },
+    "d3-force": {
+      "src": "../../node_modules/d3-force/src/index.js",
+      "file": "d3-force.js",
+      "fileHash": "1a3ed5c6",
+      "needsInterop": false
+    },
+    "framer-motion": {
+      "src": "../../node_modules/framer-motion/dist/es/index.mjs",
+      "file": "framer-motion.js",
+      "fileHash": "7608ce50",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "chunk-GFRZGVVC": {
+      "file": "chunk-GFRZGVVC.js"
+    },
+    "chunk-FYGYNQUM": {
+      "file": "chunk-FYGYNQUM.js"
+    },
+    "chunk-32EALFBN": {
+      "file": "chunk-32EALFBN.js"
+    },
+    "chunk-MLT5HUW5": {
+      "file": "chunk-MLT5HUW5.js"
+    },
+    "chunk-G3PMV62Z": {
+      "file": "chunk-G3PMV62Z.js"
+    }
+  }
+}
