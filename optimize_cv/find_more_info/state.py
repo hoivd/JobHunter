@@ -1,4 +1,6 @@
 from typing import TypedDict, Literal
+from fastapi import WebSocket
+
 
 class State(TypedDict):
     cv_info: str

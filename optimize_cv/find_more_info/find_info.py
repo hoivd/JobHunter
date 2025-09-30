@@ -12,6 +12,9 @@ from .nodes.find_info.generate_slot import GenerateSlotNode
 from .nodes.find_info.parse_plan import ParsePlanNode
 from typing import TypedDict, List, Dict, Any
 import re
+from fastapi import  WebSocket
+import asyncio
+
 
 class State(TypedDict):
     plan_result: str
@@ -47,20 +50,20 @@ class Router:
         return "END"
 
 class MissionAgentSystem:
-    def __init__(self, llm):
+    def __init__(self, llm, ws):
         self.llm = llm
         self.tools_manager = ToolManagerRegistry([
             GitHubToolsManager(),
             AskUserToolsManager(),
         ])
-        
+        self.ws= ws
         self.workflow = StateGraph(State)
 
         # Thêm node
         self.workflow.add_node("parse_plan", ParsePlanNode())
         self.workflow.add_node("generate_slots", GenerateSlotNode(llm))
         self.workflow.add_node("planning_node", PlanningNode(llm, self.tools_manager))
-        self.workflow.add_node("tool_node", ToolNode(self.tools_manager))
+        self.workflow.add_node("tool_node", ToolNode(self.tools_manager, self.ws))
         self.workflow.add_node("observation_node", ObservationNode())
         self.workflow.add_node("next_mission", NextMissionNode())
 
@@ -89,7 +92,7 @@ class MissionAgentSystem:
 
         self.app = self.workflow.compile()
 
-    def run(self, plan_result: str):
+    async def run(self, plan_result: str):
         state: State = {
             "plan_result": plan_result,
             "missions": [],
@@ -103,14 +106,14 @@ class MissionAgentSystem:
             "end_mission": False,
             "current_step": "parse_plan",
         }
-        return self.app.invoke(state, config={"recursion_limit": 1000})
+        return await self.app.ainvoke(state, config={"recursion_limit": 1000})
     
 
 class MissionAgentNode:
-    def __init__(self, llm):
-        self.agent = MissionAgentSystem(llm)  # Agent con
+    def __init__(self, llm, ws):
+        self.agent = MissionAgentSystem(llm, ws)  # Agent con
 
-    def __call__(self, state):
+    async def __call__(self, state):
         # state ở graph cha có thể chứa thông tin cần truyền cho agent con
         plan_result = state.get("plan_result", "")
         print(plan_result)
@@ -135,7 +138,7 @@ class MissionAgentNode:
         json_plan = extract_json_from_codeblock(plan_result)
 
         # Gọi agent con
-        final_state = self.agent.run(json_plan)
+        final_state =  await self.agent.run(json_plan)
 
         # Trả dữ liệu cần thiết về cho graph cha
         state["mission_final_state"] = final_state

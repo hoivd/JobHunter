@@ -7,7 +7,7 @@ from datetime import datetime
 class Utils:
     @staticmethod
     @lru_cache
-    def get_config(path: str = "config.yaml") -> dict:
+    def get_config(path: str = "D:\JobHunter\optimize_cv\config.yaml") -> dict:
         """
         Đọc file YAML config và cache lại để không phải đọc nhiều lần.
         Trả về dict Python.

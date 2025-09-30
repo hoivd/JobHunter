@@ -30,8 +30,9 @@ logger = _setup_logger(__name__, level=config["logging"]["level"])
 
 
 class AgentSystem:
-    def __init__(self, llm):
+    def __init__(self, llm, ws=None):
         self.llm = llm
+        self.ws = ws
         self._init_nodes()
         self._init_graph()
 
@@ -39,7 +40,7 @@ class AgentSystem:
         self.agent_jd_extraction = AgentJDExtraction(self.llm)
         self.agent_analysis_per_info = AgentAnalysisPerInfo(self.llm)   
         self.agent_plan_find_info = AgentPlanFindInfo(self.llm)
-        self.agent_find_info = MissionAgentNode(self.llm)
+        self.agent_find_info = MissionAgentNode(self.llm, self.ws)
         self.agent_complete_cv = AgentCompleteCV(self.llm)
 
 
@@ -76,8 +77,8 @@ class AgentSystem:
         else:
             return "END"
         
-    def run(self, state):
-        return self.app.invoke(state)
+    async def run(self, state):
+        return await self.app.ainvoke(state)
 
 def main():
     from dotenv import load_dotenv

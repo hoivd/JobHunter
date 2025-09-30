@@ -5,9 +5,10 @@ from langchain_google_genai import ChatGoogleGenerativeAI
 from .state import State
 from .multi_agent import AgentSystem   # ⚡ chỉnh lại path import cho đúng project
 import re
-def generate_cv(cv_info: str, jd_info: str):
+async def generate_cv(cv_info: str, jd_info: str, ws):
     # Load API key từ .env
-    load_dotenv()
+    print("load key")
+    load_dotenv(dotenv_path="D:/JobHunter/optimize_cv/.env")
     api_key = os.getenv("GOOGLE_API_KEY")
     if not api_key:
         raise ValueError("⚠️ GOOGLE_API_KEY chưa được set trong file .env")
@@ -31,8 +32,8 @@ def generate_cv(cv_info: str, jd_info: str):
     }
 
     # Chạy AgentSystem duy nhất
-    agent_system = AgentSystem(llm=llm)
-    final_state = agent_system.run(state)
+    agent_system = AgentSystem(llm=llm, ws=ws)
+    final_state = await agent_system.run(state)
 
     # In kết quả
     print("\n=== FINAL RESULT ===")

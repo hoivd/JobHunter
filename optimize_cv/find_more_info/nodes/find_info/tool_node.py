@@ -1,5 +1,6 @@
 import re
 import json
+from typing import Any, Dict
 
 
 class ToolNode:
@@ -12,13 +13,15 @@ class ToolNode:
     - End[{...json kết quả...}]
     """
 
-    def __init__(self, tool_registry):
+    def __init__(self, tool_registry, ws=None):
         """
         - tool_registry: instance của ToolManagerRegistry
+        - ws: WebSocket (nếu có) để pass cho tool ask_user
         """
         self.registry = tool_registry
+        self.ws = ws
 
-    def __call__(self, state: dict):
+    async def __call__(self, state: Dict[str, Any]) -> Dict[str, Any]:
         print("\n=== Tool Node ===")
         response = state.get("reAct", {}).get("raw_response", "")
         print(response)
@@ -41,7 +44,7 @@ class ToolNode:
             print(response)
             result = action[len("End["):-1]
             print("\n✅ Mission hoàn thành với kết quả cuối cùng:")
-            collected_info = state["collected_info"] + [result] 
+            collected_info = state.get("collected_info", []) + [result]
             state["reAct"]["cot"] = cot
             state["reAct"]["thought"] = reason
             state["reAct"]["action"] = action
@@ -50,7 +53,6 @@ class ToolNode:
                 "collected_info": collected_info,
                 "current_step": "tool_node",
                 "end_mission": True,
-
             }
 
         # --- Parse Action thành tool_name + input ---
@@ -64,62 +66,43 @@ class ToolNode:
         tools = self.registry.get_all_tools()
         tool_func = tools.get(tool_name)
 
+        async def run_tool(tool_name, tool_func, tool_input):
+            if tool_input and isinstance(tool_input, str) and tool_input.startswith("{"):
+                parsed_input = json.loads(tool_input)
+            elif tool_input:
+                parsed_input = tool_input
+            else:
+                parsed_input = {}
+
+            # nếu tool là ask_user thì thêm ws vào input schema
+            if tool_name == "ask_user" and self.ws is not None:
+                if isinstance(parsed_input, dict):
+                    parsed_input["ws"] = self.ws
+                else:
+                    parsed_input = {"ws": self.ws, "question": parsed_input}
+            print(parsed_input)
+            # chạy tool (phân biệt async/sync)
+            if hasattr(tool_func, "ainvoke"):  # async tool
+                return await tool_func.ainvoke(parsed_input)
+            else:  # sync tool
+                return tool_func.invoke(parsed_input)
+
+        # --- Thực thi tool ---
         if not tool_func:
             print(f"⚠️ Tool '{tool_name}' không tồn tại trong registry")
             observation = {"error": f"Tool '{tool_name}' không tồn tại"}
         else:
             try:
-                if tool_input and tool_input.startswith("{"):
-                    parsed_input = json.loads(tool_input)
-                    observation = tool_func.invoke(parsed_input)
-                elif tool_input:
-                    observation = tool_func.invoke(tool_input)
-                else:
-                    observation = tool_func.invoke({})
+                observation = await run_tool(tool_name, tool_func, tool_input)
             except Exception as e:
                 observation = {"error": str(e)}
 
         # --- Ghi vào state ---
-        # state["reAct"]["cot"] = cot
         state["reAct"]["thought"] = reason
         state["reAct"]["action"] = action
         if tool_name == "ask_user":
-            state["reAct"]["observation"] = "HumanInput: " + observation
+            state["reAct"]["observation"] = "HumanInput: " + str(observation)
         else:
             state["reAct"]["observation"] = observation
 
-
         return {"current_step": "tool_node"}
-    
-if __name__ == "__main__":
-    # Import ở đây để chỉ dùng khi test
-    from ...tools.tool_manager_registry import ToolManagerRegistry
-    from ...tools.git_tools import GitHubToolsManager
-    from ...tools.ask_user_tools import AskUserToolsManager
-
-    # Tạo registry và đăng ký managers
-    registry = ToolManagerRegistry()
-    registry.register_manager(GitHubToolsManager())
-    registry.register_manager(AskUserToolsManager())
-
-    # Khởi tạo ToolNode với registry
-    node = ToolNode(registry)
-
-    # State mẫu để test
-    state = {
-        "reAct": {
-            "goal": "Hoàn thiện phần thông tin cá nhân theo yêu cầu của CV chuyên nghiệp.",
-            "objective": "Thu thập đầy đủ các thông tin sau: Họ và tên đầy đủ, Số điện thoại, Địa chỉ email chuyên nghiệp, Địa chỉ (thành phố/tỉnh), Liên kết LinkedIn (nếu có), Liên kết GitHub (rất quan trọng).",
-            "raw_response": "**CoT**: Objective là thu thập thông tin cá nhân chi tiết cho CV, bao gồm Họ và tên đầy đủ, Số điện thoại, Địa chỉ email chuyên nghiệp, Địa chỉ (thành phố/tỉnh), Liên kết LinkedIn, và Liên kết GitHub. Hiện tại chưa có bất kỳ thông tin nào. Để bắt đầu, tôi cần hỏi ứng viên về các thông tin cơ bản này. Công cụ `ask_user` là phù hợp nhất để thu thập thông tin trực tiếp từ ứng viên. Tôi sẽ bắt đầu bằng việc hỏi họ và tên đầy đủ.\n**Reason**: Cần thu thập thông tin cá nhân cơ bản từ ứng viên để hoàn thiện CV.\n**Action**: ask_user[{\"question\": \"Vui lòng cung cấp họ và tên đầy đủ của bạn.\"}]",
-            "action_line": "**Action**: ask_user[{\"question\": \"Vui lòng cung cấp họ và tên đầy đủ của bạn.\"}]"
-        },
-        "current_step": "planning_node"
-    }
-
-    # Chạy ToolNode
-    result = node(state)
-
-    print("\n=== State sau khi chạy ToolNode ===")
-    print(json.dumps(state, ensure_ascii=False, indent=2))
-    print("\n=== Kết quả return ===")
-    print(result)
