@@ -1,0 +1,59 @@
+Link ảnh: ‘https://drive.google.com/file/d/1og8DOydLjMX5ne3sOCJIvU6HjYp-pRsN/view’
+AI Engineer (Computer Vision/NPL/LLM)
+MB Bank
+Sign in to view salary
+
+ Tòa nhà MB, số 18 Lê Văn Lương, Cau Giay, Ha Noi  At office 2 days ago
+Skills:
+Job Expertise:
+Job Domain:
+Top 3 reasons to join us
+Mức lương cạnh tranh, hấp dẫn
+Môi trường làm việc chuyên nghiệp, thân thiện
+Được làm việc với các hệ thống hiện đại, tiên tiến
+Job description
+Phát triển, ứng dụng, tối ưu, tích hợp mô hình AI cho các bài toán ứng dụng trong hoạt động Kinh doanh/Ngân hàng về các lĩnh vực Computer Vision, NLP...
+Tham gia vào các công đoạn triển khai dịch vụ: Kiến trúc hệ thống, thiết kế mô hình hoạt động, luồng hoạt động, chức năng, tối ưu performance
+Coding, test metrics, service và unittest theo mô hình DevOps, MLOps
+Nghiên cứu, tìm hiểu các bài báo khoa học mới nhất về AI, ML, DL
+Với nhóm ứng viên là các bạn chuẩn bị tốt nghiệp tài năng và fresher: tham gia các chương trình đào tạo và dự án dành cho nhân viên tập sự để phát triển lên các vị trí chính thức.
+Your skills and experience
+Tốt nghiệp Đại học các chuyên ngành: Công nghệ thông tin, Khoa học máy tính, Điện tử viễn thông, Công nghệ phần mềm, Hệ thống thông tin....
+Có kiến thức và kỹ năng về MỘT TRONG NHỮNG nội dung sau:
+            + Ngôn ngữ lập trình Python, C/C++
+            + Service/MicroService với một trong các framework FastAPI/Flask/Django
+            + Tensorflow/Pytorch/DGL/PyG/Onnx
+           + API (Restful/gRPC), Lập trình an toàn, đảm bảo & tối ưu hiệu năng
+            + Git và Git Flow, Docker/ Kubernete, Kubeflow/MLFlow, TritonServer/ Tensorflow Serving
+            + Các dạng bài toán Supervised learning, Reinforcement learning
+           + Xử lý Ảnh (Computer Vision)/Video/Âm thanh/Ngôn ngữ tự nhiên (NLP)
+           + CNN/RNN/Transformer/Attention, SVM/KNN/Clustering, GNN vv...
+           + Kỹ thuật Knowledge Distiller/ Model Prune,  Model Quantization
+Why you'll love working here
+Trải nghiệm Thu nhập hấp dẫn với gói đãi ngộ toàn diện: 
+Thưởng thành tích tháng 13; Thưởng thành tích theo kết quả công việc 06 tháng, 1 năm ; Thưởng các dịp lễ tết trong năm ; Thưởng theo danh hiệu cá nhân và tập thể… 
+Du lịch nghỉ dưỡng hàng năm
+Khám sức khỏe định kì
+Gói bảo hiểm sức khỏe cá nhân và người thân (MIC)
+Quà tặng và ngày nghỉ sinh nhật hưởng nguyên lương 
+Cơ hội nghề nghiệp và phát triển bản thân: 
+Được thử sức với các nền tảng công nghệ mới, tham gia vào những dự án chuyển đổi lớn của ngân hàng 
+Có cơ hội học hỏi từ các Chuyên gia, Lãnh đạo nội bộ hàng đầu tại MB trong lĩnh vực IT, Tài chính ngân hàng 
+Được trải nghiệm các phương pháp học tập mới và phát triển năng lực theo lộ trình công danh. 
+Hưởng các chính sách hỗ trợ, khuyến khích học tập, nâng cao trình độ và phát triển bản thân (chứng chỉ nghề quốc tế...) 
+Môi trường làm việc lý tưởng với: 
+Những người cộng sự thân thiện và tài năng 
+Cơ sở vật chất, không gian làm việc xanh và hiện đại.
+ 
+
+MB Bank
+4.9
+
+Ngân hàng TMCP Quân Đội (MB)
+Company typeCompany industryCompany size
+IT Product
+Banking
+1000+
+CountryWorking days
+VietnamMonday - Friday
+

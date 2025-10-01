@@ -1,0 +1,57 @@
+```python
+{
+  "id_img": "1iXKFjgHTQ9KevOJPrYznQqapNqIwzSxn",
+  "content": """IT Business Analyst (Senior BA)
+Dai-ichi Life Việt Nam
+Sign in to view salary
+
+ 149-151 Nguyen Van Troi, Ward 11, Phu Nhuan, Ho Chi Minh  At office 1 day ago
+Skills:
+Job Expertise:
+Job Domain:
+Job description
+Assisting user in defining business requirements to meet their business goals
+Preparing business specification documents
+Conducting system tests & user acceptant tests
+Carrying our day-to-day applications and operations support
+Planning/Managing resources to implement the software enhancements and/or special projects as assigned
+Your skills and experience
+A university degree/college diploma in Business/Computing, or equivalent business experience
+Experiences in life insurance/financial business/business analysis
+At least 5 years of experience
+Basic knowledge of data base: MSSQL or MySQL or DB2
+Computer literate in office suite of products (word, spreadsheet, flowchart, presentation etc.)
+Demonstrates basic knowledge of Data Architecture of system and basic SQL.
+Understanding of applications interfaces between life system and other corporate systems
+Good at English 
+Soft skills:
+Customer service mindset
+Good analytical skills and attentive to details
+Analytical thinking and a fast learner
+Able to work under pressure and meet tight deadlines
+Excellent interpersonal and communication skills
+Good resource planning/management skills
+Personal attributes
+Good team player, independent and result-oriented
+Flexible and open to changes
+Why you'll love working here
+Salary for 13th month, Bonus & Special Bonus
+Full of social welfare under Vietnamese Labor Law (Insurance, annual leave, ...)
+Healthcare for yourself & Your Family
+Annual travel and team building activities
+15-16 annual leave days
+Company will buy Life Insurance Contract for yourself after 1 year working
+Training: Trained in soft and technical skills
+International, challenging, and friendly working environment
+
+Dai-ichi Life Việt Nam
+4.1
+Dai-ichi Life Việt Nam
+Company typeCompany industryCompany size
+Non-IT
+Financial Services
+1000+
+CountryWorking daysOvertime policy
+JapanMonday - FridayExtra salary for OT"""
+}
+```

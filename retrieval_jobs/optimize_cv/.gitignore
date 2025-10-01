@@ -1,0 +1,6 @@
+.env
+__pycache__
+output_cypher
+/data/
+/log/
+/debug/

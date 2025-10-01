@@ -10,6 +10,19 @@ import json
 import warnings
 warnings.filterwarnings("ignore", category=DeprecationWarning)
 from retrieval.retriever import JobRetriever
+import json
+
+def parse_jd_details(data):
+    parsed_data = {}
+    for key, value in data[0].items():  # lặp qua từng item trong dict
+        # Thay single quote thành double quote để json.loads có thể parse
+        try:
+            clean_value = value.replace("'", '"')
+            parsed_data[key] = json.loads(clean_value)
+        except json.JSONDecodeError as e:
+            print(f"Error parsing {key}: {e}")
+            parsed_data[key] = None
+    return parsed_data
 class ConversationalAgent:
     def __init__(self):
         self.github_tool = GithubTool()
@@ -120,10 +133,26 @@ class ConversationalAgent:
             jd_info = self.neo4j_tool.run_cypher(cypher_query)
             jd_details.append({job: jd_info})
 
-        with open("output/jd_details.json", "w", encoding="utf-8") as f:
-            json.dump(jd_details, f, ensure_ascii=False, indent=4)
+        all_parsed = []
+        for item in jd_details:
+            parsed_item = parse_jd_details([item])
+            all_parsed.append(parsed_item)
 
-        return {"jobs": jobs, "jd_details": jd_details}
+        flattened_data = []
+        
+        for item in all_parsed:
+            for job_title, jobs in item.items():
+                if isinstance(jobs, list):  # chỉ xử lý khi jobs là list
+                    for job in jobs:
+                        if isinstance(job, dict):  # chỉ copy khi job là dict
+                            job_copy = job.copy()
+                            job_copy['job_title'] = job_title
+                            flattened_data.append(job_copy)
+                            
+        with open("output/jd_details.json", "w", encoding="utf-8") as f:
+            json.dump(flattened_data, f, ensure_ascii=False, indent=4)
+
+        return {"jobs": jobs, "jd_details": flattened_data}
 
 if __name__ == "__main__":
     agent = ConversationalAgent()
