@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import search from "../../assets/icons/search.png";
 import { job_description } from "../../mocks/Job";
 import JobCard from "../Jobs/JobCard";
@@ -6,10 +6,35 @@ import JobDetail from "../Jobs/JobDetail";
 
 const DashBoardCont = () => {
   const [isJobComp, setIsJobComp] = useState(null);
+  const inputRef = useRef(null);
+  const [jobs, setJobs] = useState([]);
 
-  const submitHandler = () => {
-    console.log("submit");
-  };
+
+const submitHandler = async (e) => {
+  e?.preventDefault(); // ngăn form reload trang
+  const text = inputRef.current.value;
+
+  try {
+    const response = await fetch("http://localhost:8000/chat", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ text }),
+    });
+
+    const data = await response.json();
+    console.log("API response:", data);
+
+    // Lấy trực tiếp jd_details từ backend
+    setJobs(data.response.jd_details);
+
+  } catch (error) {
+    console.error("Error fetching API:", error);
+  }
+};
+
+
+
+
 
   return (
     <div className="bg-[#f3fdfe] rounded-l-4xl pt-6 pl-10  flex flex-col h-screen">
@@ -19,6 +44,7 @@ const DashBoardCont = () => {
       >
         <img src={search} alt="Search icon" className="w-6 h-6" />
         <input
+        ref={inputRef}
           onKeyDown={(e) => {
             if (e.key === "Enter") {
               e.preventDefault();
@@ -27,6 +53,7 @@ const DashBoardCont = () => {
           }}
           type="text"
           className="w-full py-2 outline-none border-none"
+          placeholder="Your technical skill, position or more"
         />
         <button
           type="submit"
@@ -47,7 +74,7 @@ const DashBoardCont = () => {
       }
     `}
         >
-          {job_description.map((job, index) => (
+          {jobs.map((job, index) => (
             <JobCard key={index} job={job} setIsJobComp={setIsJobComp} />
           ))}
         </div>
