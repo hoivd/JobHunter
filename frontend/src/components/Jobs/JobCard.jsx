@@ -14,7 +14,7 @@ const JobCard = ({ job, setIsJobComp }) => {
   return (
     <div
       onClick={() => setIsJobComp(job)}
-      className="w-full  max-h-[450px] bg-white shadow-md rounded-2xl 
+      className="w-full  max-h-[400px] bg-white shadow-md rounded-2xl 
              py-4 px-6 flex flex-col justify-between space-y-2 
              hover:brightness-105 hover:scale-[1.02] 
              duration-300 transform transition-all cursor-pointer relative"

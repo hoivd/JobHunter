@@ -4,6 +4,7 @@ import DashBoardCont from "../components/DashBoard/DashboardCont";
 import UploadCv from "./UploadCv";
 import SavedJob from "./SavedJob";
 import CheckCv from "./CheckCv";
+import Assistant from "../components/DashBoard/Assistant.jsx";
 
 const Dashboard = () => {
   const [isActive, setIsActive] = useState("Dashboard");
@@ -21,6 +22,8 @@ const Dashboard = () => {
       {isActive === "Upload CV" && <UploadCv />}
       {isActive === "Saved Job" && <SavedJob />}
       {isActive === "Check CV" && <CheckCv />}
+
+      <Assistant /> {/* Add Assistant */}
     </div>
   );
 };

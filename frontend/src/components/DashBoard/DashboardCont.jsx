@@ -1,6 +1,5 @@
 import { useRef, useState } from "react";
 import search from "../../assets/icons/search.png";
-import { job_description } from "../../mocks/Job";
 import JobCard from "../Jobs/JobCard";
 import JobDetail from "../Jobs/JobDetail";
 
@@ -66,7 +65,7 @@ const submitHandler = async (e) => {
       <div className="flex flex-1 h-full space-x-6 overflow-hidden">
         {/* Job List */}
         <div
-          className={`transition-all duration-300 overflow-y-auto no-scrollbar grid gap-6 py-2
+          className={`transition-all duration-300 overflow-y-auto no-scrollbar grid gap-6 py-2 pl-2 pr-8
       ${
         isJobComp
           ? "flex-[0.6] grid-cols-1 md:grid-cols-2"
