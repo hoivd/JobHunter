@@ -57,7 +57,16 @@ async def chat(query: Query):
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
-
+@app.post("/chat_query")
+async def chat(query: Query):
+    """Nhận JSON {'text': '...'} và trả {'response': '...'}"""
+    loop = asyncio.get_running_loop()
+    try:
+        # Chạy agent.chat trong thread pool để tránh block event loop
+        response = await loop.run_in_executor(executor, agent.chat, query.text)
+        return {"response": response}
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
 # WebSocket endpoint: /ws
 
         
