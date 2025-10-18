@@ -108,16 +108,17 @@ Ví dụ file `parsed_jobs/AI_Engineer.json`:
 
 ## 🧠 4. Luồng hoạt động tổng quát
 
-```mermaid
-graph TD
-    A[app.py] -->|call| B[IndeedScraper]
-    B -->|fetch data| C[RapidAPI - Indeed]
-    C -->|return raw JSON| B
-    B --> D[save_job_result()]
-    A -->|pass raw data| E[JobParser]
-    E -->|parse jobs| F[Job Objects]
-    F -->|save| G[parsed_jobs/*.json]
-```
+Quy trình xử lý dữ liệu việc làm:
+
+app.py  
+  ↓  
+IndeedScraper → Gửi request đến API (RapidAPI - Indeed)  
+  ↓  
+Nhận JSON dữ liệu thô  
+  ↓  
+JobParser → Phân tích, trích xuất thông tin job  
+  ↓  
+Lưu từng job thành file JSON trong thư mục `parsed_jobs/`
 
 ---
 
