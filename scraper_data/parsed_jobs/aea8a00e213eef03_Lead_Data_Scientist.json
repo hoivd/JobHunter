@@ -1,0 +1,14 @@
+{
+  "jobKey": "aea8a00e213eef03",
+  "title": "Lead Data Scientist",
+  "companyName": "Zalo",
+  "location": "Thành phố Hồ Chí Minh",
+  "salary": {},
+  "jobUrl": "https://www.indeed.com/viewjob?jk=aea8a00e213eef03",
+  "datePublished": "2025-10-01",
+  "isRemote": false,
+  "rating": 5,
+  "numOfCandidates": null,
+  "companyLogoUrl": null,
+  "descriptionText": "Hồ Chí Minh\nFull-time\n\nWe are looking for a Lead Data Scientist to join our Data Science team, focusing on optimizing our Retrieval and Ranking systems to deliver personalized, engaging, and relevant content to millions of users every day. You will drive the development and optimization of large-scale machine learning models that power our core recommendation engines.\nAs the technical lead, you will work closely with product managers, backend engineers, and other data scientists to shape the short video experience on Zalo, with a strong emphasis on data-driven decisions, experimentation, and continuous model improvement.\n\n   What you will do\n\n• Lead the design and development of ML models for candidate retrieval and multi-objective ranking, optimizing for user engagement, watch time, and content diversity.\n• Drive end-to-end modeling cycles: problem scoping, data exploration, feature engineering, model training, evaluation, deployment, and monitoring.\n• Own and improve online metrics (e.g., CTR, watch time, retention) and offline metrics (e.g., precision, recall, NDCG) through iterative experimentation.\n• Collaborate with infra/backend teams to optimize real-time serving latency, model freshness, and feature pipelines.\n• Mentor junior data scientists and contribute to the technical roadmap for the recommendation team.\n• Stay current with the latest research in retrieval, ranking, large-scale machine learning, and recommenders, and apply relevant advances to production.\n\n   What you will need\n\n• Bachelor’s or Master’s degree in Computer Science, Data Science, Machine Learning, or related fields. PhD is a plus.\n• Deep understanding of retrieval models (ANN, two-tower, DSSM) and ranking architectures (GBDT, DNNs, MMoE, DCN, etc.).\n• Proficiency in Python, SQL, and ML frameworks such as TensorFlow, PyTorch, or similar.\n• Experience working with large-scale data (Spark, Hadoop) and real-time systems (online serving, A/B testing, streaming data).\n• Strong analytical mindset with a product-oriented approach to modeling and metric design.\n• Excellent communication skills, with experience collaborating in cross-functional teams.\nNice to Have\n• Experience with short video or media platforms (e.g., TikTok, YouTube Shorts, Instagram Reels).\n• Familiarity with multi-task learning, reinforcement learning, or causal inference in recommendation settings.\n• Prior experience in leading teams or driving technical strategy in fast-paced environments."
+}

@@ -1,0 +1,14 @@
+{
+  "jobKey": "8aeef081b6991cf1",
+  "title": "Lead/Senior AI Research",
+  "companyName": "Zalo",
+  "location": "Thành phố Hồ Chí Minh",
+  "salary": {},
+  "jobUrl": "https://www.indeed.com/viewjob?jk=8aeef081b6991cf1",
+  "datePublished": "2025-10-01",
+  "isRemote": false,
+  "rating": 5,
+  "numOfCandidates": null,
+  "companyLogoUrl": null,
+  "descriptionText": "Hồ Chí Minh\nFull-time\n\nWe are seeking a Senior AI Engineer to lead the development of our next-generation conversational AI platforms. You will build and deploy intelligent chatbots and agents that redefine user interaction, powered by cutting-edge Large Language Models (LLMs)\n\n   What you will do\nDesign, build, and deploy LLM-powered chatbots and intelligent agents;\nFine-tune and optimize LLMs using techniques like Retrieval-Augmented Generation (RAG);\nDevelop robust evaluation frameworks to measure and iterate on model performance;\nResearch and apply the latest advancements in conversational AI and agentic systems.\n   What you will need\n3+ years of experience in AI/ML, with a strong focus on NLP and LLMs;\nHands-on experience with LLM fine-tuning, prompt engineering, and RAG;\nExpert proficiency in Python and deep learning frameworks like PyTorch or TensorFlow;\nFamiliarity with LLM tools (e.g., LangChain) and vector databases;\nExcellent problem-solving skills and a strong sense of ownership;\nBachelor's/Master's in Computer Science, AI, or a related field."
+}
